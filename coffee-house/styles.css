@@ -23,6 +23,12 @@ body {
   color: #403F3D;
 }
 
+.container {
+  padding: 0 40px;
+  width: 1360px;
+  display: flex;
+}
+
 h1 {
   font-size: 72px;
   font-weight: 600;
@@ -41,8 +47,10 @@ h3 {
   line-height: 125%;
 }
 
-.light {
-  color: #E1D4C9;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .accent {
@@ -62,6 +70,25 @@ h3 {
 a, button {
   font-weight: 600;
   line-height: 150%;
+  text-decoration: none;
+  color: #403F3D;
+}
+
+a {
+  position: relative;
+}
+a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  transition: width 0.3s ease;
+  height: 2px;
+  background: #403F3D;
+}
+a:hover::after {
+  width: 100%;
 }
 
 .burger-link {
@@ -73,7 +100,16 @@ a, button {
 header {
   margin: 20px 0;
 }
-
-.container {
-  padding: 0 40px;
+header .container {
+  justify-content: space-between;
+  align-items: center;
+}
+header ul {
+  display: flex;
+  gap: 40px;
+}
+header .menu {
+  display: flex;
+  align-items: start;
+  gap: 9px;
 }/*# sourceMappingURL=styles.css.map */

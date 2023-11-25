@@ -1,17 +1,20 @@
-@font-face 
-  font-display: swap
-  font-family: 'Inter'
-  font-style: normal
-  font-weight: 400
-  src: url('fonts/inter-v13-latin-regular.woff2') format('woff2')
+@font-face
+    font-display: swap
+    font-family: 'Inter'
+    font-style: normal
+    font-weight: 400
+    src: url('fonts/inter-v13-latin-regular.woff2') format('woff2')
 
-@font-face 
-  font-display: swap
-  font-family: 'Inter'
-  font-style: normal
-  font-weight: 600
-  src: url('fonts/inter-v13-latin-600.woff2') format('woff2')
-    
+@font-face
+    font-display: swap
+    font-family: 'Inter'
+    font-style: normal
+    font-weight: 600
+    src: url('fonts/inter-v13-latin-600.woff2') format('woff2')
+
+$light: #E1D4C9
+$dark: #403F3D
+
 body
     width: 1440px
     margin: 0 auto
@@ -19,8 +22,13 @@ body
     font-size: 16px
     font-weight: 400
     line-height: 150%
-    background: #E1D4C9
-    color: #403F3D
+    background: $light
+    color: $dark
+
+.container
+    padding: 0 40px
+    width: 1360px
+    display: flex
 
 h1
     font-size: 72px
@@ -37,8 +45,10 @@ h3
     font-weight: 600
     line-height: 125%
 
-.light
-    color: #E1D4C9
+ul 
+    list-style-type: none
+    margin: 0
+    padding: 0
 
 .accent
     color: #B0907A
@@ -54,6 +64,23 @@ h3
 a, button
     font-weight: 600
     line-height: 150%
+    text-decoration: none
+    color: $dark
+
+a
+    position: relative
+    &::after
+        content: ''
+        position: absolute
+        bottom: -5px
+        left: 0
+        width: 0%
+        transition: width .3s ease
+        height: 2px
+        background: $dark
+    &:hover
+        &::after
+            width: 100%
 
 .burger-link
     font-size: 32px
@@ -62,6 +89,13 @@ a, button
 
 header
     margin: 20px 0
-
-.container
-    padding: 0 40px
+    .container
+        justify-content: space-between
+        align-items: center
+    ul
+        display: flex
+        gap: 40px
+    .menu
+        display: flex
+        align-items: start
+        gap: 9px
