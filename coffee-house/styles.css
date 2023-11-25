@@ -24,26 +24,28 @@ body {
 }
 
 .container {
-  padding: 0 40px;
+  margin: 0 40px;
   width: 1360px;
   display: flex;
 }
 
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
 h1 {
   font-size: 72px;
-  font-weight: 600;
   line-height: 105%;
 }
 
 h2 {
   font-size: 60px;
-  font-weight: 600;
   line-height: 125%;
 }
 
 h3 {
   font-size: 24px;
-  font-weight: 600;
   line-height: 125%;
 }
 
@@ -53,8 +55,8 @@ ul {
   padding: 0;
 }
 
-.accent {
-  color: #B0907A;
+p {
+  margin: 0;
 }
 
 .fontAccent {
@@ -72,6 +74,7 @@ a, button {
   line-height: 150%;
   text-decoration: none;
   color: #403F3D;
+  border: none;
 }
 
 a {
@@ -89,6 +92,12 @@ a::after {
 }
 a:hover::after {
   width: 100%;
+}
+
+button {
+  padding: 20px 78px;
+  border-radius: 100px;
+  font-size: 16px;
 }
 
 .burger-link {
@@ -112,4 +121,29 @@ header .menu {
   display: flex;
   align-items: start;
   gap: 9px;
+}
+header a {
+  display: flex;
+}
+
+.welcome {
+  color: #E1D4C9;
+}
+.welcome span {
+  color: #B0907A;
+}
+.welcome .container {
+  border-radius: 40px;
+  background: no-repeat url("images/img-hero.jpg");
+}
+.welcome-content {
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-basis: 40%;
+}
+.welcome button {
+  width: -moz-max-content;
+  width: max-content;
 }/*# sourceMappingURL=styles.css.map */
