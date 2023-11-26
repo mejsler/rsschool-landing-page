@@ -103,13 +103,15 @@ a:hover::after {
 }
 
 .button-primary {
-  padding: 20px 78px;
+  padding: 20px 0px;
   border-radius: 100px;
   font-size: 16px;
   background: #E1D4C9;
 }
+.button-primary::after {
+  content: none;
+}
 .button-primary span {
-  padding-right: 28px;
   position: relative;
 }
 .button-primary span::before {
@@ -119,7 +121,7 @@ a:hover::after {
   width: 20px;
   height: 20px;
   background: url("images/css_sprites.png") -10px -50px;
-  right: 0;
+  right: -30px;
   opacity: 0;
 }
 .button-primary:hover span::before {
@@ -212,8 +214,9 @@ header a {
   background-size: cover;
   background-position: center;
 }
-.welcome button {
+.welcome a {
   width: 200px;
+  text-align: center;
 }
 
 .favorite-item {
