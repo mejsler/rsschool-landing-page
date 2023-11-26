@@ -183,3 +183,23 @@ header
         transform: rotate(180deg)
     .next
         right: 5px
+
+.about-us
+    .container
+        flex-direction: column
+    &-gallery
+        margin-top: 40px
+        column-count: 2
+        column-gap: 40px
+        img
+            border-radius: 20px
+            max-width: 100%
+            display: block
+            grid-row: 1 / -1
+            grid-column: 1
+        figure
+            margin: 0
+            display: grid
+            grid-template-rows: 1fr auto
+            margin-bottom: 40px
+            break-inside: avoid

@@ -214,4 +214,30 @@ header a {
 }
 .slider .next {
   right: 5px;
+}
+
+.about-us .container {
+  flex-direction: column;
+}
+.about-us-gallery {
+  margin-top: 40px;
+  -moz-column-count: 2;
+       column-count: 2;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+.about-us-gallery img {
+  border-radius: 20px;
+  max-width: 100%;
+  display: block;
+  grid-row: 1/-1;
+  grid-column: 1;
+}
+.about-us-gallery figure {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 40px;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
 }/*# sourceMappingURL=styles.css.map */
