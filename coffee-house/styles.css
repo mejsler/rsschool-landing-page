@@ -151,7 +151,7 @@ a:hover::after {
   background-color: #665F55;
   color: #E1D4C9;
 }
-.button-app:hover div[class^=icon-] {
+.button-app:hover span[class^=icon-] {
   filter: invert(100%);
 }
 
