@@ -107,6 +107,12 @@ a
         background-color: $dark
         background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgN0gxMy41TTEzLjUgN0w3LjUgMU0xMy41IDdMNy41IDEzIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
 
+.button-app
+    padding: 12px 60px 12px 20px
+    border-radius: 100px
+    font-size: 16px
+    border: 1px solid $dark
+
 .burger-link
     font-size: 32px
     font-weight: 600
@@ -185,6 +191,7 @@ header
         right: 5px
 
 .about-us
+    margin-bottom: 60px
     .container
         flex-direction: column
     &-gallery
@@ -203,3 +210,32 @@ header
             grid-template-rows: 1fr auto
             margin-bottom: 40px
             break-inside: avoid
+
+.download
+    .container
+        justify-content: space-between
+    &-content
+        display: flex
+        flex-direction: column
+        justify-content: center
+        flex-basis: 45%
+    .button-app-container
+        display: flex
+        gap: 20px
+    p
+        margin: 40px 0
+    button
+        display: flex
+        .icon-google
+            width: 31px
+            height: 34px
+            background: url('images/css_sprites.png') -10px -103px
+        .icon-apple
+            width: 28px
+            height: 33px
+            background: url('images/css_sprites.png') -10px -50px
+        .icon-text
+            display: flex
+            flex-direction: column
+            padding-left: 15px
+            text-align: left
