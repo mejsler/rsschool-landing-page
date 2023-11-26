@@ -236,21 +236,44 @@ header
         margin-top: 40px
         column-count: 2
         column-gap: 40px
-        img
+        .img-container
             border-radius: 20px
             max-width: 100%
-            display: block
+            display: flex
+            align-items: center
             grid-row: 1 / -1
             grid-column: 1
-            transition: transform .3s ease
+            overflow: hidden
             &:hover
-                transform: scale(0.95)
+                img
+                    transform: scale(1)
+            img
+                transition: all .3s ease
+                transform: scale(1.1)
+                transform-origin: center
+                width: 100%
         figure
             margin: 0
             display: grid
             grid-template-rows: 1fr auto
             margin-bottom: 40px
             break-inside: avoid
+            &:first-of-type
+                .img-container
+                    width: 660px
+                    height: 590px
+            &:nth-of-type(2)
+                .img-container
+                    width: 660px
+                    height: 430px
+            &:nth-of-type(3)
+                .img-container
+                    width: 660px
+                    height: 430px
+            &:last-of-type
+                .img-container
+                    width: 660px
+                    height: 590px
 
 .download
     .container
@@ -354,8 +377,40 @@ header
             padding-left: 30px
 
 body.menu
+    .menu-columns
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        width: 100%
+        gap: 40px
+        &-item
+            flex: 20%
+            border-radius: 40px
+            outline: 1px solid $border-light
+            cursor: pointer
+            &:hover
+                .img-box img
+                    transform: scale(1)
+            &-text
+                margin: 20px
+                display: flex
+                flex-direction: column
+                p
+                    margin: 12px 0
+        .img-box
+            width: 310px
+            height: 310px
+            border-radius: 40px
+            overflow: hidden
+            display: flex
+            img
+                transform: scale(1.1)
+                transform-origin: center
+                transition: all .3s ease
 
     .menu-list
+        .container
+            flex-direction: column
         ul
             display: flex
             justify-content: center

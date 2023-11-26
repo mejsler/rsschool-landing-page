@@ -279,16 +279,23 @@ header a {
   -moz-column-gap: 40px;
        column-gap: 40px;
 }
-.about-us-gallery img {
+.about-us-gallery .img-container {
   border-radius: 20px;
   max-width: 100%;
-  display: block;
+  display: flex;
+  align-items: center;
   grid-row: 1/-1;
   grid-column: 1;
-  transition: transform 0.3s ease;
+  overflow: hidden;
 }
-.about-us-gallery img:hover {
-  transform: scale(0.95);
+.about-us-gallery .img-container:hover img {
+  transform: scale(1);
+}
+.about-us-gallery .img-container img {
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+  transform-origin: center;
+  width: 100%;
 }
 .about-us-gallery figure {
   margin: 0;
@@ -297,6 +304,22 @@ header a {
   margin-bottom: 40px;
   -moz-column-break-inside: avoid;
        break-inside: avoid;
+}
+.about-us-gallery figure:first-of-type .img-container {
+  width: 660px;
+  height: 590px;
+}
+.about-us-gallery figure:nth-of-type(2) .img-container {
+  width: 660px;
+  height: 430px;
+}
+.about-us-gallery figure:nth-of-type(3) .img-container {
+  width: 660px;
+  height: 430px;
+}
+.about-us-gallery figure:last-of-type .img-container {
+  width: 660px;
+  height: 590px;
 }
 
 .download .container {
@@ -419,6 +442,45 @@ header a {
   padding-left: 30px;
 }
 
+body.menu .menu-columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 40px;
+}
+body.menu .menu-columns-item {
+  flex: 20%;
+  border-radius: 40px;
+  outline: 1px solid #C1B6AD;
+  cursor: pointer;
+}
+body.menu .menu-columns-item:hover .img-box img {
+  transform: scale(1);
+}
+body.menu .menu-columns-item-text {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+body.menu .menu-columns-item-text p {
+  margin: 12px 0;
+}
+body.menu .menu-columns .img-box {
+  width: 310px;
+  height: 310px;
+  border-radius: 40px;
+  overflow: hidden;
+  display: flex;
+}
+body.menu .menu-columns .img-box img {
+  transform: scale(1.1);
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+body.menu .menu-list .container {
+  flex-direction: column;
+}
 body.menu .menu-list ul {
   display: flex;
   justify-content: center;
