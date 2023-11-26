@@ -442,6 +442,9 @@ header a {
   padding-left: 30px;
 }
 
+body.menu .footer-right {
+  margin-top: -5px;
+}
 body.menu .menu-columns {
   display: flex;
   flex-direction: row;
