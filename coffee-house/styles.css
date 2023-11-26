@@ -12,6 +12,10 @@
   font-weight: 600;
   src: url("fonts/inter-v13-latin-600.woff2") format("woff2");
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 1440px;
   margin: 0 auto;
@@ -86,12 +90,13 @@ a {
 a::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: -8px;
   left: 0;
   width: 0%;
   transition: width 0.3s ease;
   height: 2px;
   background: #403F3D;
+  border-radius: 25px;
 }
 a:hover::after {
   width: 100%;
@@ -102,6 +107,23 @@ a:hover::after {
   border-radius: 100px;
   font-size: 16px;
   background: #E1D4C9;
+}
+.button-primary span {
+  padding-right: 28px;
+  position: relative;
+}
+.button-primary span::before {
+  transition: opacity 0.3s ease;
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url("images/css_sprites.png") -10px -50px;
+  right: 0;
+  opacity: 0;
+}
+.button-primary:hover span::before {
+  opacity: 1;
 }
 
 .button-icon-dark {
@@ -122,7 +144,15 @@ a:hover::after {
   padding: 12px 60px 10px 20px;
   border-radius: 100px;
   font-size: 16px;
-  border: 1px solid #403F3D;
+  border: 1px solid #665F55;
+  transition: background-color 0.3s ease;
+}
+.button-app:hover {
+  background-color: #665F55;
+  color: #E1D4C9;
+}
+.button-app:hover div[class^=icon-] {
+  filter: invert(100%);
 }
 
 .burger-link {
@@ -140,6 +170,7 @@ header {
 }
 header .logo::after {
   content: none;
+  margin: 20px 0;
 }
 header .container {
   justify-content: space-between;
@@ -182,54 +213,53 @@ header a {
   background-position: center;
 }
 .welcome button {
-  width: -moz-max-content;
-  width: max-content;
+  width: 200px;
 }
 
-.slider-item {
+.favorite-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 36%;
   margin: 40px 0;
 }
-.slider-control {
+.favorite-control {
   display: flex;
   gap: 12px;
 }
-.slider-control div {
+.favorite-control div {
   height: 4px;
   width: 40px;
   border-radius: 30px;
   background: #C1B6AD;
   cursor: pointer;
 }
-.slider-control .active {
+.favorite-control .active {
   background: #403F3D;
 }
-.slider .container {
+.favorite .container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.slider p {
+.favorite p {
   margin: 16px;
   text-align: center;
 }
-.slider img {
+.favorite img {
   margin-bottom: 20px;
 }
-.slider button {
+.favorite button {
   position: absolute;
   top: 51%;
 }
-.slider .prev {
+.favorite .prev {
   left: 5px;
   transform-origin: center;
   transform: rotate(180deg);
 }
-.slider .next {
+.favorite .next {
   right: 5px;
 }
 
@@ -252,6 +282,7 @@ header a {
   display: block;
   grid-row: 1/-1;
   grid-column: 1;
+  transition: transform 0.3s ease;
 }
 .about-us-gallery figure {
   margin: 0;
@@ -291,7 +322,7 @@ header a {
   height: 36px;
   background: url("images/css_sprites.png") -10px -302px;
 }
-.download button .icon-text {
+.download button .text {
   display: flex;
   flex-direction: column;
   padding-left: 7px;
@@ -323,25 +354,36 @@ header a {
   display: flex;
   gap: 10px;
 }
-.footer-left ul i {
+.footer-left ul a {
   width: 24px;
   height: 24px;
   display: block;
   margin: 19px;
+}
+.footer-left ul a::after {
+  content: none;
 }
 .footer-left ul li {
   width: 60px;
   height: 60px;
   border-radius: 100%;
   border: 1px solid #E1D4C9;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-.footer-left ul li:first-of-type i {
+.footer-left ul li:hover {
+  background-color: #E1D4C9;
+}
+.footer-left ul li:hover a {
+  filter: invert(1);
+}
+.footer-left ul li:first-of-type a {
   background: url("images/css_sprites.png") -10px -258px;
 }
-.footer-left ul li:nth-of-type(2) i {
+.footer-left ul li:nth-of-type(2) a {
   background: url("images/css_sprites.png") -10px -214px;
 }
-.footer-left ul li:last-of-type i {
+.footer-left ul li:last-of-type a {
   background: url("images/css_sprites.png") -10px -170px;
 }
 .footer-right {
@@ -351,6 +393,9 @@ header a {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.footer-right a::after {
+  background-color: #E1D4C9;
 }
 .footer-right li:first-of-type a {
   background: url("images/css_sprites.png") -10px -130px no-repeat;

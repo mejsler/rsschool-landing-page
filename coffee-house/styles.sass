@@ -18,6 +18,9 @@ $dark: #403F3D
 $border-light: #C1B6AD
 $container-bg: #665F55
 
+html
+    scroll-behavior: smooth
+
 body
     width: 1440px
     margin: 0 auto
@@ -80,12 +83,13 @@ a
     &::after
         content: ''
         position: absolute
-        bottom: -5px
+        bottom: -8px
         left: 0
         width: 0%
         transition: width .3s ease
         height: 2px
         background: $dark
+        border-radius: 25px
     &:hover
         &::after
             width: 100%
@@ -95,6 +99,21 @@ a
     border-radius: 100px
     font-size: 16px
     background: $light
+    span
+        padding-right: 28px
+        position: relative
+        &::before
+            transition: opacity .3s ease
+            content: ''
+            position: absolute
+            width: 20px
+            height: 20px
+            background: url('images/css_sprites.png') -10px -50px
+            right: 0
+            opacity: 0
+    &:hover
+        span::before
+            opacity: 1
 
 .button-icon-dark
     padding: 29px
@@ -112,7 +131,13 @@ a
     padding: 12px 60px 10px 20px
     border-radius: 100px
     font-size: 16px
-    border: 1px solid $dark
+    border: 1px solid $container-bg
+    transition: background-color .3s ease
+    &:hover
+        background-color: $container-bg
+        color: $light
+        div[class^='icon-']
+            filter: invert(100%)
 
 .burger-link
     font-size: 32px
@@ -123,10 +148,11 @@ section
     margin-bottom: 100px
 
 header
+    margin: 20px 0
     .logo
         &::after
             content: none
-    margin: 20px 0
+            margin: 20px 0
     .container
         justify-content: space-between
         align-items: center
@@ -139,7 +165,7 @@ header
         &::before
             content: ''
             position: absolute
-            width: 20px 
+            width: 20px
             height: 20px
             background: url('images/css_sprites.png') -10px -50px
             right: 0
@@ -160,9 +186,9 @@ header
         background-size: cover
         background-position: center
     button
-        width: max-content
+        width: 200px
 
-.slider
+.favorite
     &-item
         display: flex
         flex-direction: column
@@ -214,6 +240,7 @@ header
             display: block
             grid-row: 1 / -1
             grid-column: 1
+            transition: transform .3s ease
         figure
             margin: 0
             display: grid
@@ -244,7 +271,7 @@ header
             width: 36px
             height: 36px
             background: url('images/css_sprites.png') -10px -302px
-        .icon-text
+        .text
             display: flex
             flex-direction: column
             padding-left: 7px
@@ -270,24 +297,32 @@ header
         ul
             display: flex
             gap: 10px
-            i
+            a
                 width: 24px
                 height: 24px
                 display: block
                 margin: 19px
+                &::after
+                    content: none
             li
                 width: 60px
                 height: 60px
                 border-radius: 100%
                 border: 1px solid $light
+                cursor: pointer
+                transition: all .3s ease
+                &:hover
+                    background-color: $light
+                    a
+                        filter: invert(1)
                 &:first-of-type
-                    i
+                    a
                         background: url('images/css_sprites.png') -10px -258px
                 &:nth-of-type(2)
-                    i
+                    a
                         background: url('images/css_sprites.png') -10px -214px
                 &:last-of-type
-                    i
+                    a
                         background: url('images/css_sprites.png') -10px -170px
     &-right
         margin-left: 100px
@@ -295,6 +330,9 @@ header
             display: flex
             flex-direction: column
             gap: 20px
+        a
+            &::after
+                background-color: $light
         li
             &:first-of-type
                 a
