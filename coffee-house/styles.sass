@@ -123,6 +123,9 @@ section
     margin-bottom: 100px
 
 header
+    .logo
+        &::after
+            content: none
     margin: 20px 0
     .container
         justify-content: space-between
@@ -130,10 +133,16 @@ header
     ul
         display: flex
         gap: 40px
-    .menu
-        display: flex
-        align-items: start
-        gap: 9px
+    .menu-button
+        padding-right: 28px
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            width: 20px 
+            height: 20px
+            background: url('images/css_sprites.png') -10px -50px
+            right: 0
     a
         display: flex
 
