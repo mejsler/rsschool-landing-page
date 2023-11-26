@@ -83,7 +83,7 @@ a
     &::after
         content: ''
         position: absolute
-        bottom: -8px
+        bottom: -5px
         left: 0
         width: 0%
         transition: width .3s ease
@@ -352,3 +352,65 @@ header
                     background: url('images/css_sprites.png') -10px -10px no-repeat
         a
             padding-left: 30px
+
+body.menu
+
+    .menu-list
+        ul
+            display: flex
+            justify-content: center
+            gap: 16px
+            margin-bottom: 40px
+            .active
+                background-color: $container-bg
+                color: $light
+                border-color: $container-bg
+                i
+                    background-color: $light
+            button
+                border: 1px solid $border-light
+                border-radius: 100px
+                display: flex
+                align-items: center
+                padding: 8px
+                padding-right: 18px
+                font-size: 16px
+                transition: all .3s ease
+                &:hover
+                    background-color: $container-bg
+                    color: $light
+                    border-color: $container-bg
+                    i
+                        background-color: $light
+                i
+                    padding: 6.5px
+                    background-color: $border-light
+                    border-radius: 50px
+                    margin-right: 8px
+                    display: inline-block
+                    &::before
+                        content: ''
+                        display: block
+                        left: 0
+                        background: url('images/lazy_me.png') -10px -10px
+                        width: 17px
+                        height: 17px
+        li
+            &:nth-of-type(2)
+                i::before
+                    background: url('images/lazy_me.png') -10px -47px
+            &:last-of-type
+                i::before
+                    background: url('images/lazy_me.png') -10px -84px
+
+    h1
+        font-size: 60px
+        line-height: 125%
+        text-align: center
+        width: 60%
+        margin: 0 auto 40px auto
+    .menu-button
+        cursor: default
+        &::after
+            width: 100%
+            bottom: -2px
