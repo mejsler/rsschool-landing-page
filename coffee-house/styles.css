@@ -119,7 +119,7 @@ a:hover::after {
 }
 
 .button-app {
-  padding: 12px 60px 12px 20px;
+  padding: 12px 60px 10px 20px;
   border-radius: 100px;
   font-size: 16px;
   border: 1px solid #403F3D;
@@ -272,18 +272,85 @@ header a {
   display: flex;
 }
 .download button .icon-google {
-  width: 31px;
-  height: 34px;
-  background: url("images/css_sprites.png") -10px -103px;
+  width: 36px;
+  height: 36px;
+  background: url("images/css_sprites.png") -10px -358px;
 }
 .download button .icon-apple {
-  width: 28px;
-  height: 33px;
-  background: url("images/css_sprites.png") -10px -50px;
+  width: 36px;
+  height: 36px;
+  background: url("images/css_sprites.png") -10px -302px;
 }
 .download button .icon-text {
   display: flex;
   flex-direction: column;
-  padding-left: 15px;
+  padding-left: 7px;
   text-align: left;
+}
+
+.footer {
+  color: #E1D4C9;
+  margin-bottom: 40px;
+}
+.footer a {
+  color: #E1D4C9;
+}
+.footer h2, .footer h3 {
+  margin-bottom: 40px;
+}
+.footer-left, .footer-right {
+  flex: 1 1 0;
+}
+.footer-container {
+  display: flex;
+  background-color: #665F55;
+  padding: 100px;
+  align-items: center;
+  border-radius: 40px;
+  width: 100%;
+}
+.footer-left ul {
+  display: flex;
+  gap: 10px;
+}
+.footer-left ul i {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin: 19px;
+}
+.footer-left ul li {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 1px solid #E1D4C9;
+}
+.footer-left ul li:first-of-type i {
+  background: url("images/css_sprites.png") -10px -258px;
+}
+.footer-left ul li:nth-of-type(2) i {
+  background: url("images/css_sprites.png") -10px -214px;
+}
+.footer-left ul li:last-of-type i {
+  background: url("images/css_sprites.png") -10px -170px;
+}
+.footer-right {
+  margin-left: 100px;
+}
+.footer-right ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-right li:first-of-type a {
+  background: url("images/css_sprites.png") -10px -130px no-repeat;
+}
+.footer-right li:nth-of-type(2) a {
+  background: url("images/css_sprites.png") -10px -90px no-repeat;
+}
+.footer-right li:last-of-type a {
+  background: url("images/css_sprites.png") -10px -10px no-repeat;
+}
+.footer-right a {
+  padding-left: 30px;
 }/*# sourceMappingURL=styles.css.map */
