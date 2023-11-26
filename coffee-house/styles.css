@@ -284,6 +284,9 @@ header a {
   grid-column: 1;
   transition: transform 0.3s ease;
 }
+.about-us-gallery img:hover {
+  transform: scale(0.95);
+}
 .about-us-gallery figure {
   margin: 0;
   display: grid;
@@ -350,17 +353,20 @@ header a {
   border-radius: 40px;
   width: 100%;
 }
+.footer-left a::after {
+  content: none;
+}
 .footer-left ul {
   display: flex;
   gap: 10px;
 }
-.footer-left ul a {
+.footer-left ul i {
   width: 24px;
   height: 24px;
   display: block;
   margin: 19px;
 }
-.footer-left ul a::after {
+.footer-left ul i::after {
   content: none;
 }
 .footer-left ul li {
@@ -374,16 +380,16 @@ header a {
 .footer-left ul li:hover {
   background-color: #E1D4C9;
 }
-.footer-left ul li:hover a {
+.footer-left ul li:hover i {
   filter: invert(1);
 }
-.footer-left ul li:first-of-type a {
+.footer-left ul li:first-of-type i {
   background: url("images/css_sprites.png") -10px -258px;
 }
-.footer-left ul li:nth-of-type(2) a {
+.footer-left ul li:nth-of-type(2) i {
   background: url("images/css_sprites.png") -10px -214px;
 }
-.footer-left ul li:last-of-type a {
+.footer-left ul li:last-of-type i {
   background: url("images/css_sprites.png") -10px -170px;
 }
 .footer-right {

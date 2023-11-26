@@ -241,6 +241,8 @@ header
             grid-row: 1 / -1
             grid-column: 1
             transition: transform .3s ease
+            &:hover
+                transform: scale(0.95)
         figure
             margin: 0
             display: grid
@@ -294,10 +296,13 @@ header
         border-radius: 40px
         width: 100%
     &-left
+        a
+            &::after
+                content: none
         ul
             display: flex
             gap: 10px
-            a
+            i
                 width: 24px
                 height: 24px
                 display: block
@@ -313,16 +318,16 @@ header
                 transition: all .3s ease
                 &:hover
                     background-color: $light
-                    a
+                    i
                         filter: invert(1)
                 &:first-of-type
-                    a
+                    i
                         background: url('images/css_sprites.png') -10px -258px
                 &:nth-of-type(2)
-                    a
+                    i
                         background: url('images/css_sprites.png') -10px -214px
                 &:last-of-type
-                    a
+                    i
                         background: url('images/css_sprites.png') -10px -170px
     &-right
         margin-left: 100px
