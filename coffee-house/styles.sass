@@ -1,0 +1,185 @@
+@font-face
+    font-display: swap
+    font-family: 'Inter'
+    font-style: normal
+    font-weight: 400
+    src: url('fonts/inter-v13-latin-regular.woff2') format('woff2')
+
+@font-face
+    font-display: swap
+    font-family: 'Inter'
+    font-style: normal
+    font-weight: 600
+    src: url('fonts/inter-v13-latin-600.woff2') format('woff2')
+
+$accent: #B0907A
+$light: #E1D4C9
+$dark: #403F3D
+$border-light: #C1B6AD
+
+body
+    width: 1440px
+    margin: 0 auto
+    font-family: 'Inter'
+    font-size: 16px
+    font-weight: 400
+    line-height: 150%
+    background: $light
+    color: $dark
+
+.container
+    margin: 0 40px
+    width: 1360px
+    display: flex
+
+h1,h2,h3
+    margin: 0
+    font-weight: 600
+
+h1
+    font-size: 72px
+    line-height: 105%
+
+h2
+    font-size: 60px
+    line-height: 125%
+
+h3
+    font-size: 24px
+    line-height: 125%
+
+ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+p
+    margin: 0
+
+.fontAccent
+    font-style: italic
+    color: $accent
+
+.caption
+    font-size: 10px
+    font-weight: 600
+    line-height: 140%
+
+a, button
+    font-weight: 600
+    line-height: 150%
+    text-decoration: none
+    color: $dark
+    border: none
+    background: none
+    cursor: pointer
+
+a
+    position: relative
+    &::after
+        content: ''
+        position: absolute
+        bottom: -5px
+        left: 0
+        width: 0%
+        transition: width .3s ease
+        height: 2px
+        background: $dark
+    &:hover
+        &::after
+            width: 100%
+
+.button-primary
+    padding: 20px 78px
+    border-radius: 100px
+    font-size: 16px
+    background: $light
+
+.button-icon-dark
+    padding: 29px
+    border-radius: 100%
+    border: 1px solid $dark
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgN0gxMy41TTEzLjUgN0w3LjUgMU0xMy41IDdMNy41IDEzIiBzdHJva2U9IiM0MDNGM0QiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+    background-repeat: no-repeat
+    background-position: center
+    transition: all .3s ease
+    &:hover
+        background-color: $dark
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgN0gxMy41TTEzLjUgN0w3LjUgMU0xMy41IDdMNy41IDEzIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+
+.burger-link
+    font-size: 32px
+    font-weight: 600
+    line-height: 125%
+
+section
+    margin-bottom: 100px
+
+header
+    margin: 20px 0
+    .container
+        justify-content: space-between
+        align-items: center
+    ul
+        display: flex
+        gap: 40px
+    .menu
+        display: flex
+        align-items: start
+        gap: 9px
+    a
+        display: flex
+
+.welcome
+    color: $light
+    &-content
+        margin: 100px
+        display: flex
+        flex-direction: column
+        gap: 40px
+        flex-basis: 40%
+    .container
+        border-radius: 40px
+        background: no-repeat url('images/img-hero.jpg')
+        background-size: cover
+        background-position: center
+    button
+        width: max-content
+
+.slider
+    &-item
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 36%
+        margin: 40px 0
+    &-control
+        display: flex
+        gap: 12px
+        div
+            height: 4px
+            width: 40px
+            border-radius: 30px
+            background: $border-light
+            cursor: pointer
+        .active
+            background: $dark
+    .container
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        position: relative
+    p
+        margin: 16px
+        text-align: center
+    img
+        margin-bottom: 20px
+    button
+        position: absolute
+        top: 51%
+    .prev
+        left: 5px
+        transform-origin: center
+        transform: rotate(180deg)
+    .next
+        right: 5px
