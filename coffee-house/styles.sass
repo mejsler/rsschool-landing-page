@@ -274,7 +274,7 @@ header
 .about-us
     margin-bottom: 60px
     @media screen and (max-width: 768px)
-        margin-block: 85px
+        margin-bottom: 85px
     .container
         flex-direction: column
     &-gallery
@@ -287,13 +287,13 @@ header
         .img-container
             border-radius: 20px
             max-width: 100%
+            display: flex
+            align-items: center
+            grid-row: 1 / -1
+            grid-column: 1
+            overflow: hidden
             @media screen and (max-width: 768px)
                 min-width: 100%
-                display: flex
-                align-items: center
-                grid-row: 1 / -1
-                grid-column: 1
-                overflow: hidden
             &:hover
                 img
                     transform: scale(1)
@@ -377,11 +377,11 @@ header
         flex-wrap: wrap
         background-color: $border-dark
         padding: 100px
+        align-items: center
+        border-radius: 40px
+        width: 100%
         @media screen and (max-width: 768px)
             padding: 100px 60px
-            align-items: center
-            border-radius: 40px
-            width: 100%
     &-left
         a
             &::after
@@ -461,7 +461,6 @@ body.menu
                 flex-grow: 0
                 &:nth-of-type(8), &:nth-of-type(7), &:nth-of-type(6), &:nth-of-type(5)
                     display: none
-                        
             &:hover
                 .img-box img
                     transform: scale(1)
@@ -481,12 +480,12 @@ body.menu
                 transform: scale(1.1)
                 transform-origin: center
                 transition: all .3s ease
-
     .menu-list
-        @media screen and (max-width: 768px)
-            margin-bottom: 90px
         .container
             flex-direction: column
+            align-items: center
+        @media screen and (max-width: 768px)
+            margin-bottom: 90px
         ul
             display: flex
             justify-content: center
@@ -536,7 +535,7 @@ body.menu
         .refresh
             display: none
             svg
-                fill: transparent
+                fill: none
                 transition: fill .3s ease
             &:hover
                 svg
@@ -550,6 +549,7 @@ body.menu
         line-height: 125%
         text-align: center
         width: 60%
+        margin-bottom: 39px
         @media screen and (max-width: 768px)
             width: 100%
             margin: 0 auto 40px auto

@@ -328,7 +328,7 @@ header a {
 }
 @media screen and (max-width: 768px) {
   .about-us {
-    margin-block: 85px;
+    margin-bottom: 85px;
   }
 }
 .about-us .container {
@@ -350,15 +350,15 @@ header a {
 .about-us-gallery .img-container {
   border-radius: 20px;
   max-width: 100%;
+  display: flex;
+  align-items: center;
+  grid-row: 1/-1;
+  grid-column: 1;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .about-us-gallery .img-container {
     min-width: 100%;
-    display: flex;
-    align-items: center;
-    grid-row: 1/-1;
-    grid-column: 1;
-    overflow: hidden;
   }
 }
 .about-us-gallery .img-container:hover img {
@@ -467,13 +467,13 @@ header a {
   flex-wrap: wrap;
   background-color: #665F55;
   padding: 100px;
+  align-items: center;
+  border-radius: 40px;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .footer-container {
     padding: 100px 60px;
-    align-items: center;
-    border-radius: 40px;
-    width: 100%;
   }
 }
 .footer-left a::after {
@@ -593,13 +593,14 @@ body.menu .menu-columns .img-box img {
   transform-origin: center;
   transition: all 0.3s ease;
 }
+body.menu .menu-list .container {
+  flex-direction: column;
+  align-items: center;
+}
 @media screen and (max-width: 768px) {
   body.menu .menu-list {
     margin-bottom: 90px;
   }
-}
-body.menu .menu-list .container {
-  flex-direction: column;
 }
 body.menu .menu-list ul {
   display: flex;
@@ -658,7 +659,7 @@ body.menu .menu-list .refresh {
   display: none;
 }
 body.menu .menu-list .refresh svg {
-  fill: transparent;
+  fill: none;
   transition: fill 0.3s ease;
 }
 body.menu .menu-list .refresh:hover svg {
@@ -677,6 +678,7 @@ body.menu h1 {
   line-height: 125%;
   text-align: center;
   width: 60%;
+  margin-bottom: 39px;
 }
 @media screen and (max-width: 768px) {
   body.menu h1 {
