@@ -16,13 +16,13 @@ $accent: #B0907A
 $light: #E1D4C9
 $dark: #403F3D
 $border-light: #C1B6AD
-$container-bg: #665F55
+$border-dark: #665F55
 
 html
     scroll-behavior: smooth
 
 body
-    width: 1440px
+    max-width: 1440px
     margin: 0 auto
     font-family: 'Inter'
     font-size: 16px
@@ -33,7 +33,7 @@ body
 
 .container
     margin: 0 40px
-    width: 1360px
+    max-width: 1360px
     display: flex
 
 h1,h2,h3
@@ -132,10 +132,10 @@ a
     padding: 12px 60px 10px 20px
     border-radius: 100px
     font-size: 16px
-    border: 1px solid $container-bg
+    border: 1px solid $border-dark
     transition: background-color .3s ease
     &:hover
-        background-color: $container-bg
+        background-color: $border-dark
         color: $light
         span[class^='icon-']
             filter: invert(100%)
@@ -160,6 +160,8 @@ header
     ul
         display: flex
         gap: 40px
+    .burger
+        display: none
     .menu-button
         padding-right: 28px
         position: relative
@@ -172,6 +174,21 @@ header
             right: 0
     a
         display: flex
+    @media screen and (max-width: 768px)
+        .menu-button, nav
+            display: none
+        .burger
+            display: flex
+            flex-direction: column
+            border: 1px solid $border-dark
+            border-radius: 100px
+            padding: 21px
+            position: relative
+            text-align: center
+            span
+                width: 16px
+                height: 1.5px
+                background-color: $dark
 
 .welcome
     color: $light
@@ -189,13 +206,22 @@ header
     a
         width: 200px
         text-align: center
+    @media screen and (max-width: 768px)
+        &-content
+            flex-basis: 100%
+            margin: 100px 60px
+        .button-primary
+            span
+                margin-right: 30px
+                &:before
+                    opacity: 1
 
 .favorite
     &-item
         display: flex
         flex-direction: column
         align-items: center
-        width: 36%
+        max-width: 36%
         margin: 40px 0
     &-control
         display: flex
@@ -227,6 +253,17 @@ header
         transform: rotate(180deg)
     .next
         right: 5px
+    @media screen and (max-width: 768px)
+        &-item
+            max-width: 68%
+        h2
+            text-align: center
+        .prev
+            left: 0
+            top: 55%
+        .next
+            right: 0
+            top: 55%
 
 .about-us
     margin-bottom: 60px
@@ -315,7 +352,7 @@ header
         flex: 1 1 0
     &-container
         display: flex
-        background-color: $container-bg
+        background-color: $border-dark
         padding: 100px
         align-items: center
         border-radius: 40px
@@ -417,9 +454,9 @@ body.menu
             gap: 16px
             margin-bottom: 40px
             .active
-                background-color: $container-bg
+                background-color: $border-dark
                 color: $light
-                border-color: $container-bg
+                border-color: $border-dark
                 i
                     background-color: $light
             button
@@ -432,9 +469,9 @@ body.menu
                 font-size: 16px
                 transition: all .3s ease
                 &:hover
-                    background-color: $container-bg
+                    background-color: $border-dark
                     color: $light
-                    border-color: $container-bg
+                    border-color: $border-dark
                     i
                         background-color: $light
                 i
