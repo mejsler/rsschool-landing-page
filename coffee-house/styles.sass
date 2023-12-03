@@ -35,6 +35,7 @@ body
     margin: 0 40px
     max-width: 1360px
     display: flex
+    flex-wrap: wrap
 
 h1,h2,h3
     margin: 0
@@ -186,9 +187,14 @@ header
             position: relative
             text-align: center
             span
-                width: 16px
+                position: absolute
+                top: 37%
+                left: 30%
+                width: 17px
                 height: 1.5px
                 background-color: $dark
+                &:last-of-type()
+                    top: 58%                                    
 
 .welcome
     color: $light
@@ -267,15 +273,22 @@ header
 
 .about-us
     margin-bottom: 60px
+    @media screen and (max-width: 768px)
+        margin-block: 85px
     .container
         flex-direction: column
     &-gallery
         margin-top: 40px
         column-count: 2
         column-gap: 40px
+        @media screen and (max-width: 768px)
+            display: flex
+            flex-flow: column wrap
         .img-container
             border-radius: 20px
             max-width: 100%
+            @media screen and (max-width: 768px)
+                min-width: 100%
             display: flex
             align-items: center
             grid-row: 1 / -1
@@ -297,20 +310,25 @@ header
             break-inside: avoid
             &:first-of-type
                 .img-container
-                    width: 660px
-                    height: 590px
+                    max-width: 660px
+                    max-height: 590px
             &:nth-of-type(2)
                 .img-container
-                    width: 660px
-                    height: 430px
+                    max-width: 660px
+                    max-height: 430px
             &:nth-of-type(3)
                 .img-container
-                    width: 660px
-                    height: 430px
+                    max-width: 660px
+                    max-height: 430px
             &:last-of-type
                 .img-container
-                    width: 660px
-                    height: 590px
+                    max-width: 660px
+                    max-height: 590px
+            @media screen and (max-width: 768px)
+                margin-bottom: 14px
+                &:nth-of-type(2) .img-container, &:nth-of-type(3) .img-container
+                    display: none
+                    
 
 .download
     .container
@@ -320,6 +338,8 @@ header
         flex-direction: column
         justify-content: center
         flex-basis: 45%
+        @media screen and (max-width: 768px)
+            flex-basis: 100%
     .button-app-container
         display: flex
         gap: 20px
@@ -340,6 +360,9 @@ header
             flex-direction: column
             padding-left: 7px
             text-align: left
+    @media screen and (max-width: 768px)
+        img
+            margin: 102px auto 0
 
 .footer
     color: $light
@@ -352,8 +375,11 @@ header
         flex: 1 1 0
     &-container
         display: flex
+        flex-wrap: wrap
         background-color: $border-dark
         padding: 100px
+        @media screen and (max-width: 768px)
+            padding: 100px 60px
         align-items: center
         border-radius: 40px
         width: 100%
@@ -412,6 +438,12 @@ header
                     background: url('images/css_sprites.png') -10px -10px no-repeat
         a
             padding-left: 30px
+    @media screen and (max-width: 768px)
+        &-right
+            margin-left: 0
+            margin-top: 100px
+        &-left
+            flex: unset
 
 body.menu
     .menu-columns
