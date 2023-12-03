@@ -193,8 +193,8 @@ header
                 width: 17px
                 height: 1.5px
                 background-color: $dark
-                &:last-of-type()
-                    top: 58%                                    
+                &:last-of-type
+                    top: 58%
 
 .welcome
     color: $light
@@ -289,11 +289,11 @@ header
             max-width: 100%
             @media screen and (max-width: 768px)
                 min-width: 100%
-            display: flex
-            align-items: center
-            grid-row: 1 / -1
-            grid-column: 1
-            overflow: hidden
+                display: flex
+                align-items: center
+                grid-row: 1 / -1
+                grid-column: 1
+                overflow: hidden
             &:hover
                 img
                     transform: scale(1)
@@ -328,7 +328,6 @@ header
                 margin-bottom: 14px
                 &:nth-of-type(2) .img-container, &:nth-of-type(3) .img-container
                     display: none
-                    
 
 .download
     .container
@@ -380,9 +379,9 @@ header
         padding: 100px
         @media screen and (max-width: 768px)
             padding: 100px 60px
-        align-items: center
-        border-radius: 40px
-        width: 100%
+            align-items: center
+            border-radius: 40px
+            width: 100%
     &-left
         a
             &::after
@@ -448,8 +447,8 @@ header
 body.menu
     .menu-columns
         display: flex
-        flex-direction: row
-        flex-wrap: wrap
+        flex-flow: row wrap
+        justify-content: center
         width: 100%
         gap: 40px
         &-item
@@ -457,6 +456,12 @@ body.menu
             border-radius: 40px
             outline: 1px solid $border-light
             cursor: pointer
+            @media screen and (max-width: 768px)
+                flex-basis: 45%
+                flex-grow: 0
+                &:nth-of-type(8), &:nth-of-type(7), &:nth-of-type(6), &:nth-of-type(5)
+                    display: none
+                        
             &:hover
                 .img-box img
                     transform: scale(1)
@@ -478,6 +483,8 @@ body.menu
                 transition: all .3s ease
 
     .menu-list
+        @media screen and (max-width: 768px)
+            margin-bottom: 90px
         .container
             flex-direction: column
         ul
@@ -526,13 +533,26 @@ body.menu
             &:last-of-type
                 i::before
                     background: url('images/lazy_me.png') -10px -84px
-
+        .refresh
+            display: none
+            svg
+                fill: transparent
+                transition: fill .3s ease
+            &:hover
+                svg
+                    fill: $border-dark
+                    path
+                        stroke: $border-light
+            @media screen and (max-width: 768px)
+                display: block
     h1
         font-size: 60px
         line-height: 125%
         text-align: center
         width: 60%
-        margin: 0 auto 40px auto
+        @media screen and (max-width: 768px)
+            width: 100%
+            margin: 0 auto 40px auto
     .menu-button
         cursor: default
         &::after

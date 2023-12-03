@@ -222,7 +222,7 @@ header a {
     height: 1.5px;
     background-color: #403F3D;
   }
-  header .burger span:last-of-type() {
+  header .burger span:last-of-type {
     top: 58%;
   }
 }
@@ -350,15 +350,15 @@ header a {
 .about-us-gallery .img-container {
   border-radius: 20px;
   max-width: 100%;
-  display: flex;
-  align-items: center;
-  grid-row: 1/-1;
-  grid-column: 1;
-  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .about-us-gallery .img-container {
     min-width: 100%;
+    display: flex;
+    align-items: center;
+    grid-row: 1/-1;
+    grid-column: 1;
+    overflow: hidden;
   }
 }
 .about-us-gallery .img-container:hover img {
@@ -467,13 +467,13 @@ header a {
   flex-wrap: wrap;
   background-color: #665F55;
   padding: 100px;
-  align-items: center;
-  border-radius: 40px;
-  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .footer-container {
     padding: 100px 60px;
+    align-items: center;
+    border-radius: 40px;
+    width: 100%;
   }
 }
 .footer-left a::after {
@@ -550,8 +550,8 @@ header a {
 
 body.menu .menu-columns {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
   width: 100%;
   gap: 40px;
 }
@@ -560,6 +560,15 @@ body.menu .menu-columns-item {
   border-radius: 40px;
   outline: 1px solid #C1B6AD;
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  body.menu .menu-columns-item {
+    flex-basis: 45%;
+    flex-grow: 0;
+  }
+  body.menu .menu-columns-item:nth-of-type(8), body.menu .menu-columns-item:nth-of-type(7), body.menu .menu-columns-item:nth-of-type(6), body.menu .menu-columns-item:nth-of-type(5) {
+    display: none;
+  }
 }
 body.menu .menu-columns-item:hover .img-box img {
   transform: scale(1);
@@ -583,6 +592,11 @@ body.menu .menu-columns .img-box img {
   transform: scale(1.1);
   transform-origin: center;
   transition: all 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  body.menu .menu-list {
+    margin-bottom: 90px;
+  }
 }
 body.menu .menu-list .container {
   flex-direction: column;
@@ -640,12 +654,35 @@ body.menu .menu-list li:nth-of-type(2) i::before {
 body.menu .menu-list li:last-of-type i::before {
   background: url("images/lazy_me.png") -10px -84px;
 }
+body.menu .menu-list .refresh {
+  display: none;
+}
+body.menu .menu-list .refresh svg {
+  fill: transparent;
+  transition: fill 0.3s ease;
+}
+body.menu .menu-list .refresh:hover svg {
+  fill: #665F55;
+}
+body.menu .menu-list .refresh:hover svg path {
+  stroke: #C1B6AD;
+}
+@media screen and (max-width: 768px) {
+  body.menu .menu-list .refresh {
+    display: block;
+  }
+}
 body.menu h1 {
   font-size: 60px;
   line-height: 125%;
   text-align: center;
   width: 60%;
-  margin: 0 auto 40px auto;
+}
+@media screen and (max-width: 768px) {
+  body.menu h1 {
+    width: 100%;
+    margin: 0 auto 40px auto;
+  }
 }
 body.menu .menu-button {
   cursor: default;
