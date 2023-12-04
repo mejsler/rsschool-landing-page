@@ -48,7 +48,7 @@ h1 {
   font-size: 72px;
   line-height: 105%;
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 700px) {
   h1 {
     font-size: 42px;
     line-height: 115%;
@@ -59,7 +59,7 @@ h2 {
   font-size: 60px;
   line-height: 125%;
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 700px) {
   h2 {
     font-size: 32px;
   }
@@ -115,8 +115,10 @@ a::after {
   background: #403F3D;
   border-radius: 25px;
 }
-a:hover::after {
-  width: 100%;
+@media (hover: hover) {
+  a:hover::after {
+    width: 100%;
+  }
 }
 
 .button-primary {
@@ -141,8 +143,10 @@ a:hover::after {
   right: -30px;
   opacity: 0;
 }
-.button-primary:hover span::before {
-  opacity: 1;
+@media (hover: hover) {
+  .button-primary:hover span::before {
+    opacity: 1;
+  }
 }
 
 .button-icon-dark {
@@ -154,9 +158,11 @@ a:hover::after {
   background-position: center;
   transition: all 0.3s ease;
 }
-.button-icon-dark:hover {
-  background-color: #403F3D;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgN0gxMy41TTEzLjUgN0w3LjUgMU0xMy41IDdMNy41IDEzIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K);
+@media (hover: hover) {
+  .button-icon-dark:hover {
+    background-color: #403F3D;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgN0gxMy41TTEzLjUgN0w3LjUgMU0xMy41IDdMNy41IDEzIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K);
+  }
 }
 
 .button-app {
@@ -166,12 +172,14 @@ a:hover::after {
   border: 1px solid #665F55;
   transition: background-color 0.3s ease;
 }
-.button-app:hover {
-  background-color: #665F55;
-  color: #E1D4C9;
-}
-.button-app:hover span[class^=icon-] {
-  filter: invert(100%);
+@media (hover: hover) {
+  .button-app:hover {
+    background-color: #665F55;
+    color: #E1D4C9;
+  }
+  .button-app:hover span[class^=icon-] {
+    filter: invert(100%);
+  }
 }
 
 .burger-link {
@@ -287,6 +295,7 @@ header a {
   align-items: center;
   max-width: 36%;
   margin: 40px 0;
+  text-align: center;
 }
 .favorite-control {
   display: flex;
@@ -315,7 +324,7 @@ header a {
 .favorite img {
   margin-bottom: 20px;
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 550px) {
   .favorite img {
     width: 100%;
   }
@@ -398,8 +407,10 @@ header a {
     min-width: 100%;
   }
 }
-.about-us-gallery .img-container:hover img {
-  transform: scale(1);
+@media (hover: hover) {
+  .about-us-gallery .img-container:hover img {
+    transform: scale(1);
+  }
 }
 .about-us-gallery .img-container img {
   transition: all 0.3s ease;
@@ -492,10 +503,14 @@ header a {
     margin: 102px auto 0;
   }
 }
+@media screen and (max-width: 765px) {
+  .download img {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 380px) {
   .download img {
     margin-top: 42px;
-    width: 100%;
   }
 }
 
@@ -555,11 +570,13 @@ header a {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.footer-left ul li:hover {
-  background-color: #E1D4C9;
-}
-.footer-left ul li:hover i {
-  filter: invert(1);
+@media (hover: hover) {
+  .footer-left ul li:hover {
+    background-color: #E1D4C9;
+  }
+  .footer-left ul li:hover i {
+    filter: invert(1);
+  }
 }
 .footer-left ul li:first-of-type i {
   background: url("images/css_sprites.png") -10px -258px;
@@ -608,7 +625,7 @@ header a {
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 410px) {
   body.menu h1 {
     font-size: 32px;
     line-height: 115%;
@@ -627,6 +644,14 @@ body.menu .menu-columns-item {
   outline: 1px solid #C1B6AD;
   cursor: pointer;
 }
+body.menu .menu-columns-item-text {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+body.menu .menu-columns-item-text p {
+  margin: 12px 0;
+}
 @media screen and (max-width: 768px) {
   body.menu .menu-columns-item {
     flex-basis: 45%;
@@ -636,16 +661,10 @@ body.menu .menu-columns-item {
     display: none;
   }
 }
-body.menu .menu-columns-item:hover .img-box img {
-  transform: scale(1);
-}
-body.menu .menu-columns-item-text {
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-}
-body.menu .menu-columns-item-text p {
-  margin: 12px 0;
+@media (hover: hover) {
+  body.menu .menu-columns-item:hover .img-box img {
+    transform: scale(1);
+  }
 }
 body.menu .menu-columns .img-box {
   width: 310px;
@@ -674,9 +693,10 @@ body.menu .menu-list ul {
   gap: 16px;
   margin-bottom: 40px;
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 400px) {
   body.menu .menu-list ul {
     gap: 6px;
+    width: 100%;
   }
 }
 body.menu .menu-list ul .active {
@@ -697,13 +717,15 @@ body.menu .menu-list ul button {
   font-size: 16px;
   transition: all 0.3s ease;
 }
-body.menu .menu-list ul button:hover {
-  background-color: #665F55;
-  color: #E1D4C9;
-  border-color: #665F55;
-}
-body.menu .menu-list ul button:hover i {
-  background-color: #E1D4C9;
+@media (hover: hover) {
+  body.menu .menu-list ul button:hover {
+    background-color: #665F55;
+    color: #E1D4C9;
+    border-color: #665F55;
+  }
+  body.menu .menu-list ul button:hover i {
+    background-color: #E1D4C9;
+  }
 }
 body.menu .menu-list ul button i {
   padding: 6.5px;
@@ -733,15 +755,18 @@ body.menu .menu-list .refresh svg {
   fill: none;
   transition: fill 0.3s ease;
 }
-body.menu .menu-list .refresh:hover svg {
-  fill: #665F55;
-}
-body.menu .menu-list .refresh:hover svg path {
-  stroke: #C1B6AD;
+@media (hover: hover) {
+  body.menu .menu-list .refresh:hover svg {
+    fill: #665F55;
+  }
+  body.menu .menu-list .refresh:hover svg path {
+    stroke: #C1B6AD;
+  }
 }
 @media screen and (max-width: 768px) {
   body.menu .menu-list .refresh {
     display: block;
+    width: 100%;
   }
 }
 body.menu h1 {
@@ -757,7 +782,7 @@ body.menu h1 {
     margin: 0 auto 40px auto;
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 520px) {
   body.menu h1 {
     font-size: 32px;
     line-height: 125%;

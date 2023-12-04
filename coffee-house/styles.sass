@@ -46,14 +46,14 @@ h1,h2,h3
 h1
     font-size: 72px
     line-height: 105%
-    @media screen and (max-width: 380px)
+    @media screen and (max-width: 700px)
         font-size: 42px
         line-height: 115%
 
 h2
     font-size: 60px
     line-height: 125%
-    @media screen and (max-width: 380px)
+    @media screen and (max-width: 700px)
         font-size: 32px
 
 h3
@@ -98,9 +98,10 @@ a
         height: 2px
         background: $dark
         border-radius: 25px
-    &:hover
-        &::after
-            width: 100%
+    @media (hover: hover)
+        &:hover
+            &::after
+                width: 100%
 
 .button-primary
     padding: 20px 0px
@@ -120,9 +121,10 @@ a
             background: url('images/css_sprites.png') -10px -50px
             right: -30px
             opacity: 0
-    &:hover
-        span::before
-            opacity: 1
+    @media (hover: hover)
+        &:hover
+            span::before
+                opacity: 1
 
 .button-icon-dark
     padding: 29px
@@ -132,9 +134,10 @@ a
     background-repeat: no-repeat
     background-position: center
     transition: all .3s ease
-    &:hover
-        background-color: $dark
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgN0gxMy41TTEzLjUgN0w3LjUgMU0xMy41IDdMNy41IDEzIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+    @media (hover: hover)
+        &:hover
+            background-color: $dark
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgN0gxMy41TTEzLjUgN0w3LjUgMU0xMy41IDdMNy41IDEzIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
 
 .button-app
     padding: 12px 60px 10px 20px
@@ -142,11 +145,12 @@ a
     font-size: 16px
     border: 1px solid $border-dark
     transition: background-color .3s ease
-    &:hover
-        background-color: $border-dark
-        color: $light
-        span[class^='icon-']
-            filter: invert(100%)
+    @media (hover: hover)
+        &:hover
+            background-color: $border-dark
+            color: $light
+            span[class^='icon-']
+                filter: invert(100%)
 
 .burger-link
     font-size: 32px
@@ -239,6 +243,7 @@ header
         align-items: center
         max-width: 36%
         margin: 40px 0
+        text-align: center
     &-control
         display: flex
         gap: 12px
@@ -260,7 +265,7 @@ header
         text-align: center
     img
         margin-bottom: 20px
-        @media screen and (max-width: 380px)
+        @media screen and (max-width: 550px)
             width: 100%
     button
         position: absolute
@@ -313,9 +318,10 @@ header
             overflow: hidden
             @media screen and (max-width: 768px)
                 min-width: 100%
-            &:hover
-                img
-                    transform: scale(1)
+            @media (hover: hover)
+                &:hover
+                    img
+                        transform: scale(1)
             img
                 transition: all .3s ease
                 transform: scale(1.1)
@@ -385,10 +391,12 @@ header
     @media screen and (max-width: 768px)
         img
             margin: 102px auto 0
+    @media screen and (max-width: 765px)
+        img
+            width: 100%
     @media screen and (max-width: 380px)
         img
             margin-top: 42px
-            width: 100%
 
 .footer
     color: $light
@@ -432,10 +440,11 @@ header
                 border: 1px solid $light
                 cursor: pointer
                 transition: all .3s ease
-                &:hover
-                    background-color: $light
-                    i
-                        filter: invert(1)
+                @media (hover: hover)
+                    &:hover
+                        background-color: $light
+                        i
+                            filter: invert(1)
                 &:first-of-type
                     i
                         background: url('images/css_sprites.png') -10px -258px
@@ -478,7 +487,7 @@ header
 
 body.menu
     h1
-        @media screen and (max-width: 380px)
+        @media screen and (max-width: 410px)
             font-size: 32px
             line-height: 115%
     .menu-columns
@@ -492,20 +501,21 @@ body.menu
             border-radius: 40px
             outline: 1px solid $border-light
             cursor: pointer
-            @media screen and (max-width: 768px)
-                flex-basis: 45%
-                flex-grow: 0
-                &:nth-of-type(8), &:nth-of-type(7), &:nth-of-type(6), &:nth-of-type(5)
-                    display: none
-            &:hover
-                .img-box img
-                    transform: scale(1)
             &-text
                 margin: 20px
                 display: flex
                 flex-direction: column
                 p
                     margin: 12px 0
+            @media screen and (max-width: 768px)
+                flex-basis: 45%
+                flex-grow: 0
+                &:nth-of-type(8), &:nth-of-type(7), &:nth-of-type(6), &:nth-of-type(5)
+                    display: none
+            @media (hover: hover)
+                &:hover
+                    .img-box img
+                        transform: scale(1)
         .img-box
             width: 310px
             height: 310px
@@ -527,8 +537,9 @@ body.menu
             justify-content: center
             gap: 16px
             margin-bottom: 40px
-            @media screen and (max-width: 380px)
+            @media screen and (max-width: 400px)
                 gap: 6px
+                width: 100%
             .active
                 background-color: $border-dark
                 color: $light
@@ -544,12 +555,13 @@ body.menu
                 padding-right: 18px
                 font-size: 16px
                 transition: all .3s ease
-                &:hover
-                    background-color: $border-dark
-                    color: $light
-                    border-color: $border-dark
-                    i
-                        background-color: $light
+                @media (hover: hover)
+                    &:hover
+                        background-color: $border-dark
+                        color: $light
+                        border-color: $border-dark
+                        i
+                            background-color: $light
                 i
                     padding: 6.5px
                     background-color: $border-light
@@ -575,13 +587,15 @@ body.menu
             svg
                 fill: none
                 transition: fill .3s ease
-            &:hover
-                svg
-                    fill: $border-dark
-                    path
-                        stroke: $border-light
+            @media (hover: hover)
+                &:hover
+                    svg
+                        fill: $border-dark
+                        path
+                            stroke: $border-light
             @media screen and (max-width: 768px)
                 display: block
+                width: 100%
     h1
         font-size: 60px
         line-height: 125%
@@ -591,7 +605,7 @@ body.menu
         @media screen and (max-width: 768px)
             width: 100%
             margin: 0 auto 40px auto
-        @media screen and (max-width: 380px)
+        @media screen and (max-width: 520px)
             font-size: 32px
             line-height: 125%
     .menu-button
