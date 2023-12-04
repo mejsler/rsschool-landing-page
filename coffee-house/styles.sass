@@ -212,8 +212,6 @@ header
         flex-direction: column
         gap: 40px
         flex-basis: 40%
-        @media screen and (max-width: 380px)
-            margin: 60px 16px
     .container
         border-radius: 40px
         background: no-repeat url('images/img-hero.jpg')
@@ -231,6 +229,9 @@ header
                 margin-right: 30px
                 &:before
                     opacity: 1
+    @media screen and (max-width: 380px)
+        &-content
+            margin: 60px 16px
 
 .favorite
     &-item
@@ -260,6 +261,7 @@ header
         text-align: center
     img
         margin-bottom: 20px
+        width: 100%
     button
         position: absolute
         top: 51%
@@ -280,6 +282,13 @@ header
         .next
             right: 0
             top: 55%
+    @media screen and (max-width: 380px)
+        &-item
+            max-width: unset
+            p
+                margin: 16px 0
+        .next, .prev
+            display: none
 
 .about-us
     margin-bottom: 60px
@@ -312,6 +321,9 @@ header
                 transform: scale(1.1)
                 transform-origin: center
                 width: 100%
+                @media screen and (max-width: 380px)
+                    transform: translateX(-189px)
+                    width: unset
         figure
             margin: 0
             display: grid
@@ -351,6 +363,7 @@ header
             flex-basis: 100%
     .button-app-container
         display: flex
+        flex-wrap: wrap
         gap: 20px
     p
         margin: 40px 0
@@ -372,6 +385,10 @@ header
     @media screen and (max-width: 768px)
         img
             margin: 102px auto 0
+            width: 100%
+    @media screen and (max-width: 380px)
+        img
+            margin-top: 42px
 
 .footer
     color: $light
@@ -392,6 +409,8 @@ header
         width: 100%
         @media screen and (max-width: 768px)
             padding: 100px 60px
+        @media screen and (max-width: 380px)
+            padding: 60px 15px
     &-left
         a
             &::after
@@ -453,6 +472,9 @@ header
             margin-top: 100px
         &-left
             flex: unset
+    @media screen and (max-width: 380px)
+        &-right
+            margin-top: 40px
 
 body.menu
     .menu-columns

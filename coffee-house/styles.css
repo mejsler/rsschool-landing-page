@@ -253,11 +253,6 @@ header a {
   gap: 40px;
   flex-basis: 40%;
 }
-@media screen and (max-width: 380px) {
-  .welcome-content {
-    margin: 60px 16px;
-  }
-}
 .welcome .container {
   border-radius: 40px;
   background: no-repeat url("images/img-hero.jpg");
@@ -278,6 +273,11 @@ header a {
   }
   .welcome .button-primary span:before {
     opacity: 1;
+  }
+}
+@media screen and (max-width: 380px) {
+  .welcome-content {
+    margin: 60px 16px;
   }
 }
 
@@ -314,6 +314,7 @@ header a {
 }
 .favorite img {
   margin-bottom: 20px;
+  width: 100%;
 }
 .favorite button {
   position: absolute;
@@ -341,6 +342,17 @@ header a {
   .favorite .next {
     right: 0;
     top: 55%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .favorite-item {
+    max-width: unset;
+  }
+  .favorite-item p {
+    margin: 16px 0;
+  }
+  .favorite .next, .favorite .prev {
+    display: none;
   }
 }
 
@@ -391,6 +403,12 @@ header a {
   transform-origin: center;
   width: 100%;
 }
+@media screen and (max-width: 380px) {
+  .about-us-gallery .img-container img {
+    transform: translateX(-189px);
+    width: unset;
+  }
+}
 .about-us-gallery figure {
   margin: 0;
   display: grid;
@@ -440,6 +458,7 @@ header a {
 }
 .download .button-app-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .download p {
@@ -467,6 +486,12 @@ header a {
 @media screen and (max-width: 768px) {
   .download img {
     margin: 102px auto 0;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 380px) {
+  .download img {
+    margin-top: 42px;
   }
 }
 
@@ -495,6 +520,11 @@ header a {
 @media screen and (max-width: 768px) {
   .footer-container {
     padding: 100px 60px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .footer-container {
+    padding: 60px 15px;
   }
 }
 .footer-left a::after {
@@ -566,6 +596,11 @@ header a {
   }
   .footer-left {
     flex: unset;
+  }
+}
+@media screen and (max-width: 380px) {
+  .footer-right {
+    margin-top: 40px;
   }
 }
 
