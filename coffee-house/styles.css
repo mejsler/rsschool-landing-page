@@ -314,7 +314,11 @@ header a {
 }
 .favorite img {
   margin-bottom: 20px;
-  width: 100%;
+}
+@media screen and (max-width: 380px) {
+  .favorite img {
+    width: 100%;
+  }
 }
 .favorite button {
   position: absolute;
@@ -486,12 +490,12 @@ header a {
 @media screen and (max-width: 768px) {
   .download img {
     margin: 102px auto 0;
-    width: 100%;
   }
 }
 @media screen and (max-width: 380px) {
   .download img {
     margin-top: 42px;
+    width: 100%;
   }
 }
 
@@ -604,6 +608,12 @@ header a {
   }
 }
 
+@media screen and (max-width: 380px) {
+  body.menu h1 {
+    font-size: 32px;
+    line-height: 115%;
+  }
+}
 body.menu .menu-columns {
   display: flex;
   flex-flow: row wrap;
@@ -663,6 +673,11 @@ body.menu .menu-list ul {
   justify-content: center;
   gap: 16px;
   margin-bottom: 40px;
+}
+@media screen and (max-width: 380px) {
+  body.menu .menu-list ul {
+    gap: 6px;
+  }
 }
 body.menu .menu-list ul .active {
   background-color: #665F55;
@@ -740,6 +755,12 @@ body.menu h1 {
   body.menu h1 {
     width: 100%;
     margin: 0 auto 40px auto;
+  }
+}
+@media screen and (max-width: 380px) {
+  body.menu h1 {
+    font-size: 32px;
+    line-height: 125%;
   }
 }
 body.menu .menu-button {
