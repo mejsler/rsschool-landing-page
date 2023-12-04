@@ -33,6 +33,11 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 380px) {
+  .container {
+    margin: 0 16px;
+  }
+}
 
 h1, h2, h3 {
   margin: 0;
@@ -43,10 +48,21 @@ h1 {
   font-size: 72px;
   line-height: 105%;
 }
+@media screen and (max-width: 380px) {
+  h1 {
+    font-size: 42px;
+    line-height: 115%;
+  }
+}
 
 h2 {
   font-size: 60px;
   line-height: 125%;
+}
+@media screen and (max-width: 380px) {
+  h2 {
+    font-size: 32px;
+  }
 }
 
 h3 {
@@ -236,6 +252,11 @@ header a {
   flex-direction: column;
   gap: 40px;
   flex-basis: 40%;
+}
+@media screen and (max-width: 380px) {
+  .welcome-content {
+    margin: 60px 16px;
+  }
 }
 .welcome .container {
   border-radius: 40px;
@@ -556,7 +577,7 @@ body.menu .menu-columns {
   gap: 40px;
 }
 body.menu .menu-columns-item {
-  flex: 20%;
+  flex: 0 0 20%;
   border-radius: 40px;
   outline: 1px solid #C1B6AD;
   cursor: pointer;
