@@ -27,6 +27,18 @@ body {
   color: #403F3D;
 }
 
+.overflow {
+  overflow: hidden;
+}
+
+.body.overflow .burger span {
+  transform: rotate(45deg);
+  top: 50%;
+}
+.body.overflow .burger span:last-of-type {
+  transform: rotate(-45deg);
+}
+
 .container {
   margin: 0 40px;
   max-width: 1360px;
@@ -182,10 +194,57 @@ a::after {
   }
 }
 
+.burger {
+  z-index: 199;
+}
 .burger-link {
   font-size: 32px;
   font-weight: 600;
   line-height: 125%;
+}
+.burger-link.menu-button::before {
+  width: 40px;
+  height: 40px;
+}
+.burger-last {
+  margin-top: 160px;
+}
+@media screen and (max-width: 700px) {
+  .burger-last {
+    margin-top: 0;
+  }
+}
+.burger-last2 {
+  margin-top: 40px;
+}
+.burger-last2 img {
+  padding-left: 15px;
+}
+.burger-menu {
+  display: none;
+  position: fixed;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  background: #E1D4C9;
+  padding-top: 160px;
+  gap: 60px;
+}
+@media screen and (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+  }
+}
+.burger-show {
+  transform: translateX(0);
 }
 
 section {
@@ -194,6 +253,9 @@ section {
 
 header {
   margin: 20px 0;
+}
+header .logo {
+  z-index: 1000;
 }
 header .logo::after {
   content: none;
@@ -229,6 +291,9 @@ header a {
   header .menu-button, header nav {
     display: none;
   }
+  header .burger-link.menu-button {
+    display: flex;
+  }
   header .burger {
     display: flex;
     flex-direction: column;
@@ -239,6 +304,7 @@ header a {
     text-align: center;
   }
   header .burger span {
+    transition: all 0.5s ease;
     position: absolute;
     top: 37%;
     left: 30%;

@@ -9,21 +9,28 @@
     <title>Coffee House Menu</title>
 </head>
 
-<body class="menu">
+<body class="menu body">
     <header>
         <div class="container">
-            <a class="logo" href="/mejsler-JSFE2023Q4/coffee-house"><img src="../images/logo.svg"
+            <a class="logo" href="/coffee-house"><img src="../images/logo.svg"
                     alt="Coffee House Logo"></a>
             <nav>
                 <ul>
-                    <li><a href="/mejsler-JSFE2023Q4/coffee-house/#favorite" class="nav-link">Favorite coffee</a></li>
-                    <li><a href="/mejsler-JSFE2023Q4/coffee-house/#about-us" class="nav-link">About</a></li>
-                    <li><a href="/mejsler-JSFE2023Q4/coffee-house/#download" class="nav-link">Mobile app</a></li>
+                    <li><a href="/coffee-house/#favorite" class="nav-link">Favorite coffee</a></li>
+                    <li><a href="/coffee-house/#about-us" class="nav-link">About</a></li>
+                    <li><a href="/coffee-house/#download" class="nav-link">Mobile app</a></li>
                     <li><a href="#footer" class="nav-link">Contact us</a></li>
                 </ul>
             </nav>
             <a class="menu-button" href="#">Menu</a>
             <button class="burger"><span></span><span></span></button>
+            <ul class="burger-menu">
+                <li><a href="/coffee-house/#favorite" class="burger-link">Favorite coffee</a></li>
+                <li><a href="/coffee-house/#about-us" class="burger-link">About</a></li>
+                <li><a href="/coffee-house/#download" class="burger-link">Mobile app</a></li>
+                <li><a href="#footer" class="burger-link burger-last">Contact us</a></li>
+                <li><a class="burger-link burger-last2" href="#">Menu <img src="../images/coffee-cup.png" alt="icon"></a></li>
+            </ul>
         </div>
     </header>
     <main>
@@ -151,6 +158,7 @@
             </div>
         </div>
     </footer>
+    <script src="../script.js"></script>
 </body>
 
 </html>
