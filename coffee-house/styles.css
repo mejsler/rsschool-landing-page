@@ -376,13 +376,25 @@ header a {
   }
 }
 
+.favorite-wrapper {
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+.favorite-overflow {
+  width: 100%;
+  display: flex;
+  transition: transform 0.3s ease;
+}
 .favorite-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 36%;
   margin: 40px 0;
   text-align: center;
+  width: 100%;
 }
 .favorite-control {
   display: flex;
@@ -411,11 +423,6 @@ header a {
 .favorite img {
   margin-bottom: 20px;
 }
-@media screen and (max-width: 550px) {
-  .favorite img {
-    width: 100%;
-  }
-}
 .favorite button {
   position: absolute;
   top: 51%;
@@ -429,8 +436,8 @@ header a {
   right: 5px;
 }
 @media screen and (max-width: 768px) {
-  .favorite-item {
-    max-width: 68%;
+  .favorite-wrapper {
+    max-width: 350px;
   }
   .favorite h2 {
     text-align: center;
@@ -444,7 +451,7 @@ header a {
     top: 55%;
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 550px) {
   .favorite-item {
     max-width: unset;
   }

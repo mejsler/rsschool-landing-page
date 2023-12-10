@@ -301,13 +301,23 @@ header
             margin: 60px 16px
 
 .favorite
+    &-wrapper
+        max-width: 480px
+        display: flex
+        align-items: center
+        overflow: hidden
+        justify-content: flex-start
+    &-overflow
+        width: 100%
+        display: flex
+        transition: transform  .3s ease
     &-item
         display: flex
         flex-direction: column
         align-items: center
-        max-width: 36%
         margin: 40px 0
         text-align: center
+        width: 100%
     &-control
         display: flex
         gap: 12px
@@ -329,8 +339,8 @@ header
         text-align: center
     img
         margin-bottom: 20px
-        @media screen and (max-width: 550px)
-            width: 100%
+        //@media screen and (max-width: 550px)
+            //width: 100%
     button
         position: absolute
         top: 51%
@@ -341,8 +351,8 @@ header
     .next
         right: 5px
     @media screen and (max-width: 768px)
-        &-item
-            max-width: 68%
+        &-wrapper
+            max-width: 350px
         h2
             text-align: center
         .prev
@@ -351,7 +361,7 @@ header
         .next
             right: 0
             top: 55%
-    @media screen and (max-width: 380px)
+    @media screen and (max-width: 550px)
         &-item
             max-width: unset
             p
