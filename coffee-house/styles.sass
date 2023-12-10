@@ -258,21 +258,34 @@ header
 
 .welcome
     color: $light
+    video
+        object-fit: cover
+        height: 100%
+        width: 100%
+        filter: brightness(0.6)
     &-content
         margin: 100px
         display: flex
         flex-direction: column
         gap: 40px
-        flex-basis: 40%
+        max-width: 40%
+        position: absolute
+        left: 0
+        @media screen and (max-width: 1370px)
+            max-width: 100%
     .container
+        position: relative
+        max-width: 1360px
+        height: 644px
+        overflow: hidden
+        display: flex
+        justify-content: center
         border-radius: 40px
-        background: no-repeat url('images/img-hero.jpg')
-        background-size: cover
-        background-position: center
+        margin-bottom: 100px
     a
         width: 200px
         text-align: center
-    @media screen and (max-width: 768px)
+    @media screen and (max-width: 795px)
         &-content
             flex-basis: 100%
             margin: 100px 60px
@@ -281,7 +294,9 @@ header
                 margin-right: 30px
                 &:before
                     opacity: 1
-    @media screen and (max-width: 380px)
+    @media screen and (max-width: 490px)
+        .container
+            height: 552px
         &-content
             margin: 60px 16px
 
