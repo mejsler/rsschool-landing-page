@@ -396,19 +396,23 @@ header a {
   text-align: center;
   width: 100%;
 }
-.favorite-control {
+.favorite-controls {
   display: flex;
   gap: 12px;
 }
-.favorite-control div {
+.favorite-control-box, .favorite-control {
   height: 4px;
   width: 40px;
   border-radius: 30px;
   background: #C1B6AD;
-  cursor: pointer;
 }
-.favorite-control .active {
-  background: #403F3D;
+.favorite-control {
+  background-color: #403F3D;
+  width: 0%;
+  transition: width 0.8s ease-in-out;
+}
+.favorite-control-box:first-of-type .favorite-control {
+  width: 100%;
 }
 .favorite .container {
   flex-direction: column;

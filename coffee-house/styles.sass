@@ -318,17 +318,22 @@ header
         margin: 40px 0
         text-align: center
         width: 100%
-    &-control
+    &-controls
         display: flex
         gap: 12px
-        div
-            height: 4px
-            width: 40px
-            border-radius: 30px
-            background: $border-light
-            cursor: pointer
-        .active
-            background: $dark
+    &-control-box, &-control
+        height: 4px
+        width: 40px
+        border-radius: 30px
+        background: $border-light
+    &-control
+        background-color: $dark
+        width: 0%
+        transition: width .8s ease-in-out
+    &-control-box
+        &:first-of-type
+            .favorite-control
+                width: 100%
     .container
         flex-direction: column
         align-items: center
