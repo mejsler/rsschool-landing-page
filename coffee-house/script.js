@@ -3,7 +3,6 @@ const burgerLink = document.querySelectorAll('.burger-link');
 const burger = document.querySelector('.burger');
 const body = document.querySelector('.body');
 
-const favoriteBlock = document.querySelector('.favorite');
 const favoriteWrapper = document.querySelector('.favorite-wrapper');
 const slider = document.querySelector('.favorite-overflow');
 const prev = document.querySelector('.prev');
@@ -13,56 +12,72 @@ let step = 0;
 let width = slider.offsetWidth;
 
 // Slider
+let remainingTime;
+let timerInterval;
+let initialTime;
+let currentWidth = 0;
 
-window.addEventListener('resize', function () {
-  width = slider.offsetWidth;
-});
+function startCountdown() {
+  if (remainingTime >= 0) {
+    initialTime = remainingTime;
+  } else {
+    initialTime = 4;
+  }
+  
+  let countdownTime = initialTime;
+
+  timerInterval = setInterval(function () {
+    remainingTime = countdownTime--;
+
+    if (remainingTime >= 0) {
+      if (currentWidth < 100) {
+        controls[step].style.width = `${(currentWidth += 20)}%`;
+      }
+    } else {
+      nextSlide();
+      remainingTime = 4;
+      currentWidth = 0;
+      clearInterval(timerInterval);
+      startCountdown();
+    }
+  }, 1000);
+
+  return timerInterval;
+}
+
+function pauseCountdown() {
+  clearInterval(timerInterval);
+}
+
+function resumeCountdown() {
+  timerInterval = startCountdown();
+}
+
+const nextSlide = () => {
+  pauseCountdown();
+  removeWidth();
+  remainingTime = 4;
+  currentWidth = 0;
+  resumeCountdown();
+  step === 2 ? (step = 0) : ++step;
+  slider.style.transform = `translateX(-${width * step}px)`;
+};
+
+const prevSlide = () => {
+  pauseCountdown();
+  removeWidth();
+  remainingTime = 4;
+  currentWidth = 0;
+  resumeCountdown();
+  step === 0 ? (step = 2) : --step;
+  slider.style.transform = `translateX(-${width * step}px)`;
+};
 
 const removeWidth = () => {
   controls.forEach((control) => {
     control.style.width = '0%';
   });
 };
-
-const nextSlide = () => {
-  step === 2 ? (step = 0) : ++step;
-  slider.style.transform = `translateX(-${width * step}px)`;
-  removeWidth();
-  controls[step].style.width = '100%';
-};
-
-const prevSlide = () => {
-  step === 0 ? (step = 2) : --step;
-  slider.style.transform = `translateX(-${width * step}px)`;
-  removeWidth();
-  controls[step].style.width = '100%';
-};
-
-next.addEventListener('click', nextSlide);
-
-prev.addEventListener('click', prevSlide);
-
-let autoplay;
-
-const startAutoPlay = () => {
-  autoplay = setInterval(nextSlide, 5000);
-};
-
-const stopAutoPlay = () => {
-  clearInterval(autoplay);
-};
-
-startAutoPlay();
-
-favoriteWrapper.addEventListener('mouseleave', startAutoPlay);
-favoriteWrapper.addEventListener('touchend', startAutoPlay);
-next.addEventListener('mouseenter', stopAutoPlay);
-prev.addEventListener('mouseenter', stopAutoPlay);
-next.addEventListener('mouseleave', startAutoPlay);
-prev.addEventListener('mouseleave', startAutoPlay);
-favoriteWrapper.addEventListener('mouseenter', stopAutoPlay);
-favoriteWrapper.addEventListener('touchstart', stopAutoPlay);
-favoriteWrapper.addEventListener('touchmove', stopAutoPlay);
 
 let touchstartX = 0;
 let touchendX = 0;
@@ -75,7 +90,18 @@ const handleSwipe = () => {
   }
 };
 
-favoriteBlock.addEventListener(
+next.addEventListener('click', nextSlide);
+prev.addEventListener('click', prevSlide);
+
+favoriteWrapper.addEventListener('mouseover', pauseCountdown);
+favoriteWrapper.addEventListener('touchstart', pauseCountdown);
+
+favoriteWrapper.addEventListener('mouseout', resumeCountdown);
+favoriteWrapper.addEventListener('touchend', resumeCountdown);
+
+window.addEventListener('resize', () => width = slider.offsetWidth);
+
+favoriteWrapper.addEventListener(
   'touchstart',
   (event) => {
     touchstartX = event.changedTouches[0].screenX;
@@ -83,7 +109,7 @@ favoriteBlock.addEventListener(
   false
 );
 
-favoriteBlock.addEventListener(
+favoriteWrapper.addEventListener(
   'touchend',
   (event) => {
     touchendX = event.changedTouches[0].screenX;
@@ -109,3 +135,5 @@ burgerLink.forEach((burgerLink) =>
 );
 
 burger.addEventListener('click', toggleMenu);
+
+startCountdown();
