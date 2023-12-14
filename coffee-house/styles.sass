@@ -573,11 +573,18 @@ body.menu
         justify-content: center
         width: 100%
         gap: 40px
+        transition: opacity .5s linear
+        opacity: 1
         &-item
             flex: 0 0 20%
             border-radius: 40px
             outline: 1px solid $border-light
             cursor: pointer
+            position: relative
+            padding-bottom: 30px
+            .price
+                position: absolute
+                bottom: 20px
             &-text
                 margin: 20px
                 display: flex
@@ -593,6 +600,10 @@ body.menu
                 &:hover
                     .img-box img
                         transform: scale(1)
+        &-item.show
+            @media screen and (max-width: 768px)
+                &:nth-of-type(8), &:nth-of-type(7), &:nth-of-type(6), &:nth-of-type(5)
+                    display: block
         .img-box
             width: 310px
             height: 310px
@@ -690,3 +701,6 @@ body.menu
         &::after
             width: 100%
             bottom: -2px
+
+.opacity
+    opacity: 0
