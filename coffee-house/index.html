@@ -9,11 +9,10 @@
     <title>Coffee House</title>
 </head>
 
-<body>
+<body class="body">
     <header>
         <div class="container">
-            <a class="logo" href="/mejsler-JSFE2023Q4/coffee-house"><img src="images/logo.svg"
-                    alt="Coffee House Logo"></a>
+            <a class="logo" href="mejsler-JSFE2023Q4/coffee-house"><img src="images/logo.svg" alt="Coffee House Logo"></a>
             <nav>
                 <ul>
                     <li><a href="#favorite" class="nav-link">Favorite coffee</a></li>
@@ -24,11 +23,20 @@
             </nav>
             <a class="menu-button" href="menu">Menu</a>
             <button class="burger"><span></span><span></span></button>
+            <ul class="burger-menu">
+                <li><a href="#favorite" class="burger-link">Favorite coffee</a></li>
+                <li><a href="#about-us" class="burger-link">About</a></li>
+                <li><a href="#download" class="burger-link">Mobile app</a></li>
+                <li><a href="#footer" class="burger-link burger-last">Contact us</a></li>
+                <li><a class="burger-link burger-last2" href="menu">Menu <img src="images/coffee-cup.png"
+                            alt="icon"></a></li>
+            </ul>
         </div>
     </header>
     <main>
         <section id="welcome" class="welcome">
             <div class="container">
+                <video src="images/video.mp4" autoplay="" muted="" loop=""></video>
                 <div class="welcome-content">
                     <h1><span class="fontAccent">Enjoy</span> premium coffee at our charming cafe</h1>
                     <p>With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular
@@ -43,22 +51,40 @@
             <div class="container">
                 <h2>Choose your <span class="fontAccent">favorite</span> coffee</h2>
                 <button class="button-icon-dark prev"></button>
-                <div class="favorite-item">
-                    <img src="images/coffee-slider-1.png" alt="coffee slider 1">
-                    <h3>S’mores Frappuccino</h3>
-                    <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped
-                        with oat milk.</p>
-                    <h3>$5.50</h3>
+                <div class="favorite-wrapper">
+                    <div class="favorite-overflow">
+                        <div class="favorite-item">
+                            <img src="images/coffee-slider-1.png" alt="coffee slider 1">
+                            <h3>S’mores Frappuccino</h3>
+                            <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being
+                                topped
+                                with oat milk.</p>
+                            <h3>$5.50</h3>
+                        </div>
+                        <div class="favorite-item">
+                            <img src="images/coffee-slider-2.png" alt="coffee slider 2">
+                            <h3>Caramel Macchiato</h3>
+                            <p>Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</p>
+                            <h3>$5.00</h3>
+                        </div>
+                        <div class="favorite-item">
+                            <img src="images/coffee-slider-3.png" alt="coffee slider 3">
+                            <h3>Ice Coffee</h3>
+                            <p>A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
+                            <h3>$4.50</h3>
+                        </div>
+                    </div>
                 </div>
                 <button class="button-icon-dark next"></button>
-                <div class="favorite-control">
-                    <div class="active"></div>
-                    <div></div>
-                    <div></div>
+                <div class="favorite-controls">
+                    <div class="favorite-control-box"><div class="favorite-control"></div></div>
+                    <div class="favorite-control-box"><div class="favorite-control"></div></div>
+                    <div class="favorite-control-box"><div class="favorite-control"></div></div>
                 </div>
             </div>
         </section>
         <section id="about-us" class="about-us">
+
             <div class="container">
                 <h2>Resource is <span class="fontAccent">the perfect and cozy place</span> where you can enjoy a variety
                     of hot beverages, relax, catch up with friends, or get some work done.</h2>
@@ -126,6 +152,7 @@
             </div>
         </footer>
     </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
