@@ -26,6 +26,7 @@ burger.addEventListener('click', toggleMenu);
 const switchers = document.querySelectorAll('.menu-switcher li');
 const items = document.querySelector('.menu-columns');
 
+
 const loadData = (category) => {
   items.innerHTML = '';
   
@@ -52,7 +53,12 @@ xmlns="http://www.w3.org/2000/svg">
 <path d="M35 26H39.4C39.7314 26 40 25.7314 40 25.4V21" stroke="#403F3D"
     stroke-linecap="round" stroke-linejoin="round" />
 </svg>
-</button>`
+</button>`;
+const refresh = document.querySelector('.refresh');
+refresh.addEventListener('click', () => {
+  items.classList.add('show');
+});
+window.addEventListener('resize', () => items.classList.remove('show'));
 };
 
 
@@ -63,5 +69,7 @@ switchers.forEach((sw) => {
     sw.childNodes[0].classList.add('active')
   })
 });
+
+
 
 loadData('coffee');

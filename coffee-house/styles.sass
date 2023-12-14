@@ -567,6 +567,13 @@ body.menu
         @media screen and (max-width: 410px)
             font-size: 32px
             line-height: 115%
+    .menu-columns.show
+        .menu-columns-item
+            @media screen and (max-width: 768px)
+                &:nth-of-type(8), &:nth-of-type(7), &:nth-of-type(6), &:nth-of-type(5)
+                    display: block
+        .refresh
+            display: none
     .menu-columns
         display: flex
         flex-flow: row wrap
@@ -600,10 +607,6 @@ body.menu
                 &:hover
                     .img-box img
                         transform: scale(1)
-        &-item.show
-            @media screen and (max-width: 768px)
-                &:nth-of-type(8), &:nth-of-type(7), &:nth-of-type(6), &:nth-of-type(5)
-                    display: block
         .img-box
             width: 310px
             height: 310px
