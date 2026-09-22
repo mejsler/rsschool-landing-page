@@ -71,6 +71,44 @@
         </div>
     </footer>
     <script type="module" src="../menuScript.js"></script>
+
+    <div class="modal-backdrop" id="modalBackdrop">
+        <div class="modal-content">
+            <div class="modal-img-box">
+                <img id="modalImg" src="" alt="" />
+            </div>
+
+            <div class="modal-details">
+                <h3 id="modalTitle"></h3>
+                <p class="modal-description" id="modalDescription"></p>
+
+                <div class="modal-group">
+                    <span class="modal-group-title">Size</span>
+                    <div class="modal-options" id="modalSizes"></div>
+                </div>
+
+                <div class="modal-group">
+                    <span class="modal-group-title">Additives</span>
+                    <div class="modal-options" id="modalAdditives"></div>
+                </div>
+
+                <div class="modal-total">
+                    <h3>Total:</h3>
+                    <h3 id="modalTotal">$0.00</h3>
+                </div>
+
+                <div class="modal-info">
+                    <span class="info-icon">i</span>
+                    <p class="caption">
+                        The cost is not final. Download our mobile app to see the final price and place your order. Earn
+                        loyalty points and enjoy your favorite coffee with up to 20% discount.
+                    </p>
+                </div>
+
+                <button class="modal-close-btn" id="modalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
