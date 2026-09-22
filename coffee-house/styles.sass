@@ -1,0 +1,709 @@
+@font-face
+    font-display: swap
+    font-family: 'Inter'
+    font-style: normal
+    font-weight: 400
+    src: url('fonts/inter-v13-latin-regular.woff2') format('woff2')
+
+@font-face
+    font-display: swap
+    font-family: 'Inter'
+    font-style: normal
+    font-weight: 600
+    src: url('fonts/inter-v13-latin-600.woff2') format('woff2')
+
+$accent: #B0907A
+$light: #E1D4C9
+$dark: #403F3D
+$border-light: #C1B6AD
+$border-dark: #665F55
+
+html
+    scroll-behavior: smooth
+
+body
+    max-width: 1440px
+    margin: 0 auto
+    font-family: 'Inter'
+    font-size: 16px
+    font-weight: 400
+    line-height: 150%
+    background: $light
+    color: $dark
+
+.overflow
+    overflow: hidden
+
+.body.overflow
+    .burger
+        span
+            transform: rotate(45deg)
+            top: 50%
+            &:last-of-type
+                transform: rotate(-45deg)
+
+.container
+    margin: 0 40px
+    max-width: 1360px
+    display: flex
+    flex-wrap: wrap
+    @media screen and (max-width: 380px)
+        margin: 0 16px
+
+h1,h2,h3
+    margin: 0
+    font-weight: 600
+
+h1
+    font-size: 72px
+    line-height: 105%
+    @media screen and (max-width: 700px)
+        font-size: 42px
+        line-height: 115%
+
+h2
+    font-size: 60px
+    line-height: 125%
+    @media screen and (max-width: 700px)
+        font-size: 32px
+
+h3
+    font-size: 24px
+    line-height: 125%
+
+ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+p
+    margin: 0
+
+.fontAccent
+    font-style: italic
+    color: $accent
+
+.caption
+    font-size: 10px
+    font-weight: 600
+    line-height: 140%
+
+a, button
+    font-weight: 600
+    line-height: 150%
+    text-decoration: none
+    color: $dark
+    border: none
+    background: none
+    cursor: pointer
+
+a
+    position: relative
+    &::after
+        content: ''
+        position: absolute
+        bottom: -5px
+        left: 0
+        width: 0%
+        transition: width .3s ease
+        height: 2px
+        background: $dark
+        border-radius: 25px
+    @media (hover: hover)
+        &:hover
+            &::after
+                width: 100%
+
+.button-primary
+    padding: 20px 0px
+    border-radius: 100px
+    font-size: 16px
+    background: $light
+    &::after
+        content: none
+    span
+        position: relative
+        &::before
+            transition: opacity .3s ease
+            content: ''
+            position: absolute
+            width: 20px
+            height: 20px
+            background: url('images/css_sprites.png') -10px -50px
+            right: -30px
+            opacity: 0
+    @media (hover: hover)
+        &:hover
+            span::before
+                opacity: 1
+
+.button-icon-dark
+    padding: 29px
+    border-radius: 100%
+    border: 1px solid $dark
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgN0gxMy41TTEzLjUgN0w3LjUgMU0xMy41IDdMNy41IDEzIiBzdHJva2U9IiM0MDNGM0QiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+    background-repeat: no-repeat
+    background-position: center
+    transition: all .3s ease
+    @media (hover: hover)
+        &:hover
+            background-color: $dark
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgN0gxMy41TTEzLjUgN0w3LjUgMU0xMy41IDdMNy41IDEzIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K)
+
+.button-app
+    padding: 12px 60px 10px 20px
+    border-radius: 100px
+    font-size: 16px
+    border: 1px solid $border-dark
+    transition: background-color .3s ease
+    @media (hover: hover)
+        &:hover
+            background-color: $border-dark
+            color: $light
+            span[class^='icon-']
+                filter: invert(100%)
+.burger
+    z-index: 199
+    &-link
+        font-size: 32px
+        font-weight: 600
+        line-height: 125%
+    &-link.menu-button
+        &::before
+            width: 40px
+            height: 40px
+    &-last
+        margin-top: 160px
+        @media screen and (max-width: 700px)
+            margin-top: 0
+    &-last2
+        margin-top: 40px
+        img
+            padding-left: 15px
+    &-menu
+        display: none
+        position: fixed
+        transform: translateX(100%)
+        transition: transform .3s ease
+        flex-direction: column
+        justify-content: start
+        align-items: center
+        overflow-y: scroll
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 101
+        background: $light
+        padding-top: 160px
+        gap: 60px
+        @media screen and (max-width: 768px)
+            display: flex
+    &-show
+        transform: translateX(0)
+
+section
+    margin-bottom: 100px
+
+header
+    margin: 20px 0
+    .logo
+        z-index: 1000
+        &::after
+            content: none
+            margin: 20px 0
+    .container
+        justify-content: space-between
+        align-items: center
+    ul
+        display: flex
+        gap: 40px
+    .burger
+        display: none
+    .menu-button
+        padding-right: 28px
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            width: 20px
+            height: 20px
+            background: url('images/css_sprites.png') -10px -50px
+            right: 0
+    a
+        display: flex
+    @media screen and (max-width: 768px)
+        .menu-button, nav
+            display: none
+        .burger-link.menu-button
+            display: flex
+        .burger
+            display: flex
+            flex-direction: column
+            border: 1px solid $border-dark
+            border-radius: 100px
+            padding: 21px
+            position: relative
+            text-align: center
+            span
+                transition: all .5s ease
+                position: absolute
+                top: 37%
+                left: 30%
+                width: 17px
+                height: 1.5px
+                background-color: $dark
+                &:last-of-type
+                    top: 58%
+
+.welcome
+    color: $light
+    video
+        object-fit: cover
+        height: 100%
+        width: 100%
+        filter: brightness(0.6)
+    &-content
+        margin: 100px
+        display: flex
+        flex-direction: column
+        gap: 40px
+        max-width: 40%
+        position: absolute
+        left: 0
+        @media screen and (max-width: 1370px)
+            max-width: 100%
+    .container
+        position: relative
+        max-width: 1360px
+        height: 644px
+        overflow: hidden
+        display: flex
+        justify-content: center
+        border-radius: 40px
+        margin-bottom: 100px
+    a
+        width: 200px
+        text-align: center
+    @media screen and (max-width: 795px)
+        &-content
+            flex-basis: 100%
+            margin: 100px 60px
+        .button-primary
+            span
+                margin-right: 30px
+                &:before
+                    opacity: 1
+    @media screen and (max-width: 490px)
+        .container
+            height: 552px
+        &-content
+            margin: 60px 16px
+
+.favorite
+    &-wrapper
+        max-width: 480px
+        display: flex
+        align-items: center
+        overflow: hidden
+        justify-content: flex-start
+    &-overflow
+        width: 100%
+        display: flex
+        transition: transform .8s ease-in-out
+    &-item
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin: 40px 0
+        text-align: center
+        width: 100%
+    &-controls
+        display: flex
+        gap: 12px
+    &-control-box, &-control
+        height: 4px
+        width: 40px
+        border-radius: 30px
+        background: $border-light
+    &-control
+        background-color: $dark
+        width: 0%
+        transition: width 1s linear
+    .container
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        position: relative
+    p
+        margin: 16px
+        text-align: center
+    img
+        margin-bottom: 20px
+        max-width: 480px
+        max-height: 480px
+        //@media screen and (max-width: 550px)
+            //width: 100%
+    button
+        position: absolute
+        top: 51%
+    .prev
+        left: 5px
+        transform-origin: center
+        transform: rotate(180deg)
+    .next
+        right: 5px
+    @media screen and (max-width: 768px)
+        &-wrapper
+            max-width: 350px
+        h2
+            text-align: center
+        .prev
+            left: 0
+            top: 55%
+        .next
+            right: 0
+            top: 55%
+    @media screen and (max-width: 550px)
+        &-item
+            max-width: unset
+            p
+                margin: 16px 0
+        .next, .prev
+            display: none
+
+.about-us
+    margin-bottom: 60px
+    @media screen and (max-width: 768px)
+        margin-bottom: 85px
+    .container
+        flex-direction: column
+    &-gallery
+        margin-top: 40px
+        column-count: 2
+        column-gap: 40px
+        @media screen and (max-width: 768px)
+            display: flex
+            flex-flow: column wrap
+        .img-container
+            border-radius: 20px
+            max-width: 100%
+            display: flex
+            align-items: center
+            grid-row: 1 / -1
+            grid-column: 1
+            overflow: hidden
+            @media screen and (max-width: 768px)
+                min-width: 100%
+            @media (hover: hover)
+                &:hover
+                    img
+                        transform: scale(1)
+            img
+                transition: all .3s ease
+                transform: scale(1.1)
+                transform-origin: center
+                width: 100%
+                @media screen and (max-width: 380px)
+                    transform: translateX(-189px)
+                    width: unset
+        figure
+            margin: 0
+            display: grid
+            grid-template-rows: 1fr auto
+            margin-bottom: 40px
+            break-inside: avoid
+            &:first-of-type
+                .img-container
+                    max-width: 660px
+                    max-height: 590px
+            &:nth-of-type(2)
+                .img-container
+                    max-width: 660px
+                    max-height: 430px
+            &:nth-of-type(3)
+                .img-container
+                    max-width: 660px
+                    max-height: 430px
+            &:last-of-type
+                .img-container
+                    max-width: 660px
+                    max-height: 590px
+            @media screen and (max-width: 768px)
+                margin-bottom: 14px
+                &:nth-of-type(2) .img-container, &:nth-of-type(3) .img-container
+                    display: none
+
+.download
+    .container
+        justify-content: space-between
+    &-content
+        display: flex
+        flex-direction: column
+        justify-content: center
+        flex-basis: 45%
+        @media screen and (max-width: 768px)
+            flex-basis: 100%
+    .button-app-container
+        display: flex
+        flex-wrap: wrap
+        gap: 20px
+    p
+        margin: 40px 0
+    button
+        display: flex
+        .icon-google
+            width: 36px
+            height: 36px
+            background: url('images/css_sprites.png') -10px -358px
+        .icon-apple
+            width: 36px
+            height: 36px
+            background: url('images/css_sprites.png') -10px -302px
+        .text
+            display: flex
+            flex-direction: column
+            padding-left: 7px
+            text-align: left
+    @media screen and (max-width: 768px)
+        img
+            margin: 102px auto 0
+    @media screen and (max-width: 765px)
+        img
+            width: 100%
+    @media screen and (max-width: 380px)
+        img
+            margin-top: 42px
+
+.footer
+    color: $light
+    margin-bottom: 40px
+    a
+        color: $light
+    h2, h3
+        margin-bottom: 40px
+    &-left, &-right
+        flex: 1 1 0
+    &-container
+        display: flex
+        flex-wrap: wrap
+        background-color: $border-dark
+        padding: 100px
+        align-items: center
+        border-radius: 40px
+        width: 100%
+        @media screen and (max-width: 768px)
+            padding: 100px 60px
+        @media screen and (max-width: 380px)
+            padding: 60px 15px
+    &-left
+        a
+            &::after
+                content: none
+        ul
+            display: flex
+            gap: 10px
+            i
+                width: 24px
+                height: 24px
+                display: block
+                margin: 19px
+                &::after
+                    content: none
+            li
+                width: 60px
+                height: 60px
+                border-radius: 100%
+                border: 1px solid $light
+                cursor: pointer
+                transition: all .3s ease
+                @media (hover: hover)
+                    &:hover
+                        background-color: $light
+                        i
+                            filter: invert(1)
+                &:first-of-type
+                    i
+                        background: url('images/css_sprites.png') -10px -258px
+                &:nth-of-type(2)
+                    i
+                        background: url('images/css_sprites.png') -10px -214px
+                &:last-of-type
+                    i
+                        background: url('images/css_sprites.png') -10px -170px
+    &-right
+        margin-left: 100px
+        ul
+            display: flex
+            flex-direction: column
+            gap: 20px
+        a
+            &::after
+                background-color: $light
+        li
+            &:first-of-type
+                a
+                    background: url('images/css_sprites.png') -10px -130px no-repeat
+            &:nth-of-type(2)
+                a
+                    background: url('images/css_sprites.png') -10px -90px no-repeat
+            &:last-of-type
+                a
+                    background: url('images/css_sprites.png') -10px -10px no-repeat
+        a
+            padding-left: 30px
+    @media screen and (max-width: 768px)
+        &-right
+            margin-left: 0
+            margin-top: 100px
+        &-left
+            flex: unset
+    @media screen and (max-width: 380px)
+        &-right
+            margin-top: 40px
+
+body.menu
+    h1
+        @media screen and (max-width: 410px)
+            font-size: 32px
+            line-height: 115%
+    .menu-columns.show
+        .menu-columns-item
+            @media screen and (max-width: 768px)
+                &:nth-of-type(8), &:nth-of-type(7), &:nth-of-type(6), &:nth-of-type(5)
+                    display: block
+        .refresh
+            display: none
+    .menu-columns
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+        width: 100%
+        gap: 40px
+        transition: opacity .5s linear
+        opacity: 1
+        &-item
+            flex: 0 0 20%
+            border-radius: 40px
+            outline: 1px solid $border-light
+            cursor: pointer
+            position: relative
+            padding-bottom: 30px
+            .price
+                position: absolute
+                bottom: 20px
+            &-text
+                margin: 20px
+                display: flex
+                flex-direction: column
+                p
+                    margin: 12px 0
+            @media screen and (max-width: 768px)
+                flex-basis: 45%
+                flex-grow: 0
+                &:nth-of-type(8), &:nth-of-type(7), &:nth-of-type(6), &:nth-of-type(5)
+                    display: none
+            @media (hover: hover)
+                &:hover
+                    .img-box img
+                        transform: scale(1)
+        .img-box
+            width: 310px
+            height: 310px
+            border-radius: 40px
+            overflow: hidden
+            display: flex
+            img
+                transform: scale(1.1)
+                transform-origin: center
+                transition: all .3s ease
+    .menu-list
+        .container
+            flex-direction: column
+            align-items: center
+        @media screen and (max-width: 768px)
+            margin-bottom: 90px
+        ul
+            display: flex
+            justify-content: center
+            gap: 16px
+            margin-bottom: 40px
+            @media screen and (max-width: 400px)
+                gap: 6px
+                width: 100%
+            .active
+                background-color: $border-dark
+                color: $light
+                border-color: $border-dark
+                i
+                    background-color: $light
+            button
+                border: 1px solid $border-light
+                border-radius: 100px
+                display: flex
+                align-items: center
+                padding: 8px
+                padding-right: 18px
+                font-size: 16px
+                transition: all .3s ease
+                @media (hover: hover)
+                    &:hover
+                        background-color: $border-dark
+                        color: $light
+                        border-color: $border-dark
+                        i
+                            background-color: $light
+                i
+                    padding: 6.5px
+                    background-color: $border-light
+                    border-radius: 50px
+                    margin-right: 8px
+                    display: inline-block
+                    &::before
+                        content: ''
+                        display: block
+                        left: 0
+                        background: url('images/lazy_me.png') -10px -10px
+                        width: 17px
+                        height: 17px
+        li
+            &:nth-of-type(2)
+                i::before
+                    background: url('images/lazy_me.png') -10px -47px
+            &:last-of-type
+                i::before
+                    background: url('images/lazy_me.png') -10px -84px
+        .refresh
+            display: none
+            svg
+                fill: none
+                transition: fill .3s ease
+            @media (hover: hover)
+                &:hover
+                    svg
+                        fill: $border-dark
+                        path
+                            stroke: $border-light
+            @media screen and (max-width: 768px)
+                display: block
+                width: 100%
+    h1
+        font-size: 60px
+        line-height: 125%
+        text-align: center
+        width: 60%
+        margin-bottom: 39px
+        @media screen and (max-width: 768px)
+            width: 100%
+            margin: 0 auto 40px auto
+        @media screen and (max-width: 520px)
+            font-size: 32px
+            line-height: 125%
+    .menu-button
+        cursor: default
+        &::after
+            width: 100%
+            bottom: -2px
+
+.opacity
+    opacity: 0
