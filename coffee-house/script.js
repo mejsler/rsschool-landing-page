@@ -137,3 +137,27 @@ burgerLink.forEach((burgerLink) =>
 burger.addEventListener('click', toggleMenu);
 
 startCountdown();
+
+const themeToggleBtn = document.getElementById('themeToggle');
+const headerLogo = document.getElementById('headerLogo');
+
+const setTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+
+  if (headerLogo) {
+    headerLogo.src = theme === 'dark' ? 'images/logoDark.svg' : 'images/logo.svg';
+  }
+};
+
+// Toggle handler
+themeToggleBtn?.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  setTheme(nextTheme);
+});
+
+// Init theme on page load
+const savedTheme = localStorage.getItem('theme') || 'light';
+
+setTheme(savedTheme);

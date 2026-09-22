@@ -3,9 +3,10 @@ import data from './products.json' with { type: 'json' };
 const menu = document.querySelector('.burger-menu');
 const burgerLink = document.querySelectorAll('.burger-link');
 const burger = document.querySelector('.burger');
-const body = document.querySelector('body');
+const body = document.querySelector('.body');
 
-// Burger 
+// Burger
+
 const toggleMenu = () => {
   if (menu.classList.contains('burger-show')) {
     menu.classList.remove('burger-show');
@@ -16,7 +17,10 @@ const toggleMenu = () => {
   }
 };
 
-burgerLink.forEach((link) => link.addEventListener('click', toggleMenu));
+burgerLink.forEach((burgerLink) =>
+  burgerLink.addEventListener('click', toggleMenu)
+);
+
 burger.addEventListener('click', toggleMenu);
 
 const switchers = document.querySelectorAll('.menu-switcher li');
@@ -178,3 +182,27 @@ switchers.forEach((sw) => {
 window.addEventListener('resize', () => items.classList.remove('show'));
 
 loadData('coffee');
+
+const themeToggleBtn = document.getElementById('themeToggle');
+const headerLogo = document.getElementById('headerLogo');
+
+const setTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+
+  if (headerLogo) {
+    headerLogo.src = theme === 'dark' ? '../images/logoDark.svg' : '../images/logo.svg';
+  }
+};
+
+// Toggle handler
+themeToggleBtn?.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  setTheme(nextTheme);
+});
+
+// Init theme on page load
+const savedTheme = localStorage.getItem('theme') || 'light';
+
+setTheme(savedTheme);
