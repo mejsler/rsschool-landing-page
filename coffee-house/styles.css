@@ -512,7 +512,15 @@ section {
 .favorite-overflow {
   width: 100%;
   display: flex;
-  transition: transform 0.8s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.favorite:has(.prev:active) .favorite-overflow,
+.favorite:has(.next:active) .favorite-overflow,
+.favorite-wrapper:active .favorite-overflow {
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
 }
 
 .favorite-item {
@@ -522,6 +530,7 @@ section {
   margin: 40px 0;
   text-align: center;
   width: 100%;
+  transition: opacity 0.6s ease-in-out;
 }
 
 .favorite-controls {
